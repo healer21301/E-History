@@ -1,0 +1,380 @@
+/* ============================================================
+   E-HISTORY — PHASE 10 PROGRESS / LEARNING JOURNEY
+   ============================================================
+   QUICK MAP
+   1. Hero / overall progress
+   2. Summary cards
+   3. Continue-learning card
+   4. Lesson progress panels
+   5. Record states
+   6. Responsive rules
+   ============================================================ */
+
+
+/* ==================== 1. HERO ==================== */
+
+.progress-hero {
+    padding: 88px 4% 72px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.progress-hero-inner {
+    width: min(1180px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 70px;
+    align-items: end;
+}
+
+.progress-hero h1 {
+    max-width: 800px;
+    margin-top: 18px;
+    font-family: var(--heading-font);
+    font-size: clamp(48px, 5.5vw, 76px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.progress-hero p {
+    max-width: 720px;
+    margin-top: 22px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.overall-progress-card {
+    padding: 28px;
+    background: var(--green-dark);
+    color: white;
+    border-radius: 5px 26px 5px 26px;
+}
+
+.overall-progress-card > span {
+    color: var(--yellow);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.overall-progress-card > strong {
+    display: block;
+    margin-top: 12px;
+    font-family: var(--heading-font);
+    font-size: 54px;
+    line-height: 1;
+}
+
+.overall-progress-track {
+    height: 7px;
+    margin-top: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .13);
+    border-radius: 999px;
+}
+
+.overall-progress-fill {
+    width: 0;
+    height: 100%;
+    background: var(--yellow);
+    border-radius: inherit;
+    transition: width .35s ease;
+}
+
+.overall-progress-card p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .58);
+    font-size: 10px;
+}
+
+
+/* ==================== 2. SUMMARY CARDS ==================== */
+
+.progress-main {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 62px 0 120px;
+}
+
+.progress-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.progress-stat-card {
+    min-height: 150px;
+    padding: 23px;
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+}
+
+.progress-stat-card span {
+    color: var(--green-light);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.progress-stat-card strong {
+    display: block;
+    margin-top: 12px;
+    font-family: var(--heading-font);
+    font-size: 35px;
+}
+
+.progress-stat-card p {
+    margin-top: 4px;
+    color: var(--gray);
+    font-size: 10px;
+}
+
+
+/* ==================== 3. CONTINUE LEARNING ==================== */
+
+.continue-journey-card {
+    margin-top: 28px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-left: 5px solid var(--yellow);
+    border-radius: 16px;
+}
+
+.continue-journey-card > div > span {
+    color: var(--green-light);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.continue-journey-card h2 {
+    margin-top: 6px;
+    font-family: var(--heading-font);
+    font-size: 29px;
+}
+
+.continue-journey-card p {
+    margin-top: 5px;
+    color: var(--gray);
+    font-size: 11px;
+}
+
+
+/* ==================== 4. LESSON PROGRESS PANELS ==================== */
+
+.progress-section-heading {
+    margin-top: 76px;
+}
+
+.progress-section-heading h2 {
+    margin-top: 11px;
+    font-family: var(--heading-font);
+    font-size: clamp(36px, 4vw, 52px);
+}
+
+.lesson-progress-list {
+    margin-top: 32px;
+    display: grid;
+    gap: 18px;
+}
+
+.lesson-progress-panel {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-radius: 20px;
+}
+
+.lesson-progress-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.lesson-progress-header span {
+    color: var(--green-light);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.lesson-progress-header h3 {
+    margin-top: 5px;
+    font-family: var(--heading-font);
+    font-size: 27px;
+}
+
+.lesson-progress-header > strong {
+    font-family: var(--heading-font);
+    font-size: 30px;
+    color: var(--green-medium);
+}
+
+.lesson-progress-track {
+    height: 7px;
+    margin-top: 19px;
+    overflow: hidden;
+    background: var(--gray-light);
+    border-radius: 999px;
+}
+
+.lesson-progress-fill {
+    width: 0;
+    height: 100%;
+    background: var(--yellow);
+    border-radius: inherit;
+    transition: width .3s ease;
+}
+
+.progress-record-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.progress-record {
+    min-height: 88px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--cream);
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+}
+
+.progress-record span {
+    color: var(--gray);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.progress-record strong {
+    font-size: 12px;
+}
+
+.progress-record.completed {
+    border-color: color-mix(in srgb, var(--green-medium) 65%, var(--gray-light));
+}
+
+.progress-record.completed strong {
+    color: var(--green-medium);
+}
+
+.progress-record.locked {
+    opacity: .6;
+}
+
+
+/* ==================== 5. DARK MODE ==================== */
+
+html[data-theme="dark"] .progress-record {
+    background: color-mix(in srgb, var(--surface) 75%, black);
+}
+
+
+/* ==================== 6. RESPONSIVE ==================== */
+
+@media (max-width: 980px) {
+    .progress-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-progress-card {
+        max-width: 340px;
+    }
+
+    .progress-stat-grid,
+    .progress-record-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .progress-hero {
+        padding: 60px 4%;
+    }
+
+    .progress-hero h1 {
+        font-size: 44px;
+    }
+
+    .progress-main {
+        padding-top: 40px;
+    }
+
+    .progress-stat-grid,
+    .progress-record-grid,
+    .continue-journey-card {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-progress-header {
+        align-items: flex-start;
+    }
+}
+
+/* ============================================================
+   PHASE 17 + 19 — RESPONSIVE / COMPLETE DARK MODE AUDIT
+   ============================================================ */
+
+html[data-theme="dark"] .progress-stat-card,
+html[data-theme="dark"] .continue-journey-card,
+html[data-theme="dark"] .lesson-progress-panel {
+    color: var(--black);
+}
+
+html[data-theme="dark"] .progress-record {
+    background: color-mix(in srgb, var(--surface) 82%, var(--cream));
+    color: var(--black);
+}
+
+html[data-theme="dark"] .progress-record.completed strong,
+html[data-theme="dark"] .lesson-progress-header > strong {
+    color: var(--green-light);
+}
+
+html[data-theme="dark"] .progress-record.locked {
+    color: var(--gray);
+    opacity: .72;
+}
+
+@media (max-width:700px) {
+    .progress-hero-inner,
+    .progress-main,
+    .progress-stat-card,
+    .continue-journey-card,
+    .lesson-progress-panel,
+    .progress-record {
+        min-width: 0;
+    }
+
+    .lesson-progress-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .continue-journey-card .primary-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width:420px) {
+    .progress-hero h1 {
+        font-size: 36px;
+    }
+
+    .lesson-progress-panel {
+        padding: 20px 16px;
+    }
+}

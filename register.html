@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Registration">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Register | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+
+<body data-page="register" data-title-fil="Gumawa ng Account | E-HISTORY" data-title-en="Create Account | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+          <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+          <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+          <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+          <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+          <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+          <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+          <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== REGISTRATION ==================== -->
+  <main class="auth-page">
+    <section class="auth-layout">
+      <div class="auth-visual">
+        <span data-fil="E-HISTORY ACCOUNT" data-en="E-HISTORY ACCOUNT">E-HISTORY ACCOUNT</span>
+        <h1 data-fil="Gumawa ng iyong account." data-en="Create your account.">Gumawa ng iyong account.</h1>
+        <p
+          data-fil="Gumawa ng account ng Mag-aaral gamit ang Firebase Authentication. Ang iyong profile at progreso sa pagkatuto ay ise-save sa ligtas na cloud database."
+          data-en="Create a Student account using Firebase Authentication. Your profile and learning progress will be saved to the secure cloud database."
+        >
+          Gumawa ng Student account gamit ang Firebase Authentication. Ang iyong profile at learning progress ay isi-save sa secure cloud database.
+        </p>
+        <div class="auth-archive-number">12</div>
+      </div>
+
+      <div class="auth-panel">
+        <span data-fil="BAGONG ACCOUNT" data-en="NEW ACCOUNT">NEW ACCOUNT</span>
+        <h2 data-fil="Irehistro ang Profile" data-en="Register a Profile">Irehistro ang Profile</h2>
+
+        <div class="auth-message" id="authMessage"></div>
+
+        <form class="auth-form" id="registerForm">
+          <div class="form-group">
+            <label for="registerName" data-fil="BUONG PANGALAN" data-en="FULL NAME">BUONG PANGALAN</label>
+            <input id="registerName" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="auth-role-note">
+            <strong data-fil="Pagpaparehistro ng Mag-aaral" data-en="Student Registration">Student Registration</strong>
+            <span
+              data-fil="Para sa seguridad, ang mga account ng Guro ay ginagawa lamang ng administrator sa Firebase Console."
+              data-en="For security, Teacher accounts are provisioned only by the administrator in Firebase Console."
+            >
+              Para sa seguridad, ang Teacher accounts ay ginagawa lamang ng administrator sa Firebase Console.
+            </span>
+          </div>
+
+          <div class="form-group" id="gradeSectionGroup">
+            <label for="registerGradeSection" data-fil="BAITANG / SEKSYON" data-en="GRADE / SECTION">GRADE / SECTION</label>
+            <input id="registerGradeSection" type="text" placeholder="Grade 11 - Section">
+          </div>
+
+          <div class="form-group">
+            <label for="registerEmail" data-fil="EMAIL" data-en="EMAIL">EMAIL</label>
+            <input id="registerEmail" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="registerPassword" data-fil="PASSWORD" data-en="PASSWORD">PASSWORD</label>
+              <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required>
+            </div>
+
+            <div class="form-group">
+              <label for="registerConfirmPassword" data-fil="ULITIN ANG PASSWORD" data-en="CONFIRM PASSWORD">ULITIN ANG PASSWORD</label>
+              <input id="registerConfirmPassword" type="password" autocomplete="new-password" minlength="6" required>
+            </div>
+          </div>
+
+          <button class="auth-submit" type="submit" data-fil="Gumawa ng Account" data-en="Create Account">Gumawa ng Account</button>
+        </form>
+
+        <p class="auth-switch">
+          <span data-fil="May account ka na?" data-en="Already have an account?">May account ka na?</span>
+          <a href="login.html" data-fil="Mag-login" data-en="Log in">Mag-login</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Baitang 11 · Yunit 1" data-en="Grade 11 · Unit 1">Baitang 11 · Yunit 1</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

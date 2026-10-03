@@ -1,0 +1,113 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* =========================================================
+       E-HISTORY — PHASE 16 SECURITY-HARDENED RULES
+       =========================================================
+       STUDENT
+       - Creates only their own Student profile.
+       - Reads/updates only their own profile.
+       - Reads/writes only their own learning progress.
+
+       TEACHER
+       - Teacher accounts are provisioned manually by an admin.
+       - Reads Student profiles and progress for the dashboard.
+       - Cannot change Student progress or scores.
+
+       DEFAULT
+       - Everything not explicitly allowed is denied.
+       ========================================================= */
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function owner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function currentUserIsTeacher() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'teacher';
+    }
+
+    function validProfileCreate(uid) {
+      return owner(uid)
+        && request.resource.data.keys().hasOnly([
+          'name',
+          'email',
+          'role',
+          'gradeSection',
+          'preferences',
+          'createdAt',
+          'updatedAt'
+        ])
+        && request.resource.data.name is string
+        && request.resource.data.email is string
+        && request.resource.data.role == 'student'
+        && request.resource.data.gradeSection is string
+        && request.resource.data.preferences is map;
+    }
+
+    function validProfileUpdate() {
+      return request.resource.data.role == resource.data.role
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'name',
+          'gradeSection',
+          'preferences',
+          'updatedAt'
+        ]);
+    }
+
+    function validProgressKeys() {
+      return request.resource.data.values is map
+        && request.resource.data.values.keys().hasOnly([
+          'ehistory-l1-a1-completed', 'ehistory-l1-a1-score', 'ehistory-l1-a1-best',
+          'ehistory-l1-a2-completed', 'ehistory-l1-a2-score', 'ehistory-l1-a2-best',
+          'ehistory-l1-a3-completed', 'ehistory-l1-a3-score', 'ehistory-l1-a3-best',
+          'ehistory-l2-a1-completed', 'ehistory-l2-a1-score', 'ehistory-l2-a1-best',
+          'ehistory-l2-a2-completed', 'ehistory-l2-a2-score', 'ehistory-l2-a2-best',
+          'ehistory-l2-a3-completed', 'ehistory-l2-a3-score', 'ehistory-l2-a3-best',
+          'ehistory-l3-a1-completed', 'ehistory-l3-a1-score', 'ehistory-l3-a1-best',
+          'ehistory-l3-a2-completed', 'ehistory-l3-a2-score', 'ehistory-l3-a2-best',
+          'ehistory-l3-a3-completed', 'ehistory-l3-a3-score', 'ehistory-l3-a3-best',
+          'ehistory-assessment-1-completed', 'ehistory-assessment-1-score', 'ehistory-assessment-1-best',
+          'ehistory-assessment-2-completed', 'ehistory-assessment-2-score', 'ehistory-assessment-2-best',
+          'ehistory-exam-completed', 'ehistory-exam-score', 'ehistory-exam-best', 'ehistory-exam-attempts'
+        ]);
+    }
+
+    function validProgressDocument(uid) {
+      return request.resource.data.keys().hasOnly([
+          'uid',
+          'values',
+          'version',
+          'updatedAt'
+        ])
+        && request.resource.data.uid == uid
+        && request.resource.data.version == 2
+        && validProgressKeys();
+    }
+
+    match /users/{uid} {
+      allow create: if validProfileCreate(uid);
+      allow read: if owner(uid) || currentUserIsTeacher();
+      allow update: if owner(uid) && validProfileUpdate();
+      allow delete: if false;
+    }
+
+    match /progress/{uid} {
+      allow read: if owner(uid) || currentUserIsTeacher();
+      allow create, update: if owner(uid) && validProgressDocument(uid);
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

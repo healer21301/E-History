@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Teacher Account">
+
+  <!-- ==================== FONTS ==================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+
+  <title>Teacher Account | E-HISTORY</title>
+
+  <!-- ==================== STYLES ==================== -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+
+<body
+  data-page="teacherAccount"
+  data-title-fil="Account ng Guro | E-HISTORY"
+  data-title-en="Teacher Account | E-HISTORY"
+>
+
+  <!-- ============================================================
+       HEADER / GLOBAL NAVIGATION
+       ============================================================ -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">
+            Pag-aaral ng Kasaysayan
+          </span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+        <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+        <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+        <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+        <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+        <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+        <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         TEACHER ACCOUNT HERO
+         ============================================================ -->
+    <section class="account-hero">
+      <div class="account-hero-inner">
+        <div>
+          <span class="section-label" data-fil="ACCOUNT NG GURO" data-en="TEACHER ACCOUNT">
+            TEACHER ACCOUNT
+          </span>
+
+          <h1 data-fil="Profile ng Guro" data-en="Teacher Profile">Teacher Profile</h1>
+
+          <p
+            data-fil="Nakakonekta na sa Firebase ang account ng Guro. Gamitin ang Dashboard ng Guro upang makita ang mga profile ng mag-aaral, progreso, mga marka, at tala ng pagsusulit."
+            data-en="The Teacher account is now connected to Firebase. Use the live Teacher Dashboard to view student profiles, progress, scores, and exam records."
+          >
+            Ang Teacher account ay nakakonekta na sa Firebase. Gamitin ang live Teacher Dashboard upang makita ang student profiles, progress, scores, at exam records.
+          </p>
+        </div>
+
+        <div class="account-role-badge" data-fil="GURO" data-en="TEACHER">TEACHER</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TEACHER PROFILE / ACTIONS
+         ============================================================ -->
+    <section class="account-main">
+      <div class="prototype-notice">
+        <strong>✓</strong>
+        <div>
+          <strong data-fil="Pagsubaybay gamit ang Firebase" data-en="Phase 13 · Live Firebase Monitoring">
+            Phase 13 · Live Firebase Monitoring
+          </strong>
+          <p
+            data-fil="Tingin lamang ang pagsubaybay sa mga mag-aaral upang hindi mabago ng Guro ang kanilang mga marka o tala ng progreso."
+            data-en="Student monitoring is read-only so Teachers cannot modify student scores or progress records."
+          >
+            Read-only ang student monitoring para hindi mabago ng Teacher ang student scores o progress records.
+          </p>
+        </div>
+      </div>
+
+      <div class="account-grid">
+        <aside class="account-profile-card">
+          <div class="account-avatar" id="teacherAvatar">T</div>
+          <h2 id="teacherName" data-fil="Guro" data-en="Teacher">Guro</h2>
+          <p id="teacherEmail">—</p>
+
+          <div class="profile-details">
+            <div class="profile-detail">
+              <span data-fil="TUNGKULIN" data-en="ROLE">ROLE</span>
+              <strong data-fil="Guro" data-en="Teacher">Teacher</strong>
+            </div>
+
+            <div class="profile-detail">
+              <span data-fil="KALAGAYAN NG ACCOUNT" data-en="ACCOUNT STATUS">ACCOUNT STATUS</span>
+              <strong data-fil="Firebase Connected" data-en="Firebase Connected">Firebase Connected</strong>
+            </div>
+
+            <div class="profile-detail">
+              <span data-fil="LANGUAGE" data-en="LANGUAGE">LANGUAGE</span>
+              <strong id="teacherLanguage">FIL</strong>
+            </div>
+          </div>
+
+          <button class="account-logout" type="button" data-account-logout data-fil="Mag-logout" data-en="Log Out">
+            Mag-logout
+          </button>
+        </aside>
+
+        <div class="account-dashboard-stack">
+          <article class="account-dashboard-card">
+            <span data-fil="DASHBOARD NG GURO" data-en="LIVE TEACHER DASHBOARD">LIVE TEACHER DASHBOARD</span>
+            <h3 data-fil="Subaybayan ang Iyong Mga Mag-aaral" data-en="Monitor Your Students">
+              Subaybayan ang Iyong Mga Mag-aaral
+            </h3>
+            <p
+              data-fil="Makikita sa dashboard ang buod ng klase, listahan ng mga mag-aaral, kabuuang progreso, mga marka sa mini gawain, mga marka sa lagumang pagtataya, at resulta ng markahang pagsusulit."
+              data-en="The live dashboard shows class summaries, student lists, overall progress, mini activity scores, summative assessment scores, and term examination results."
+            >
+              Makikita sa live dashboard ang class summary, student list, overall progress, mini activity scores, summative assessment scores, at term examination results.
+            </p>
+
+            <div class="account-action-row">
+              <a class="primary-button" href="teacher-dashboard.html" data-fil="Buksan ang Dashboard ng Guro" data-en="Open Teacher Dashboard">
+                Buksan ang Teacher Dashboard
+              </a>
+            </div>
+          </article>
+
+          <article class="account-dashboard-card">
+            <span data-fil="NILALAMAN SA PAGKATUTO NG MAG-AARAL" data-en="STUDENT LEARNING CONTENT">STUDENT LEARNING CONTENT</span>
+            <h3 data-fil="I-preview ang Daloy ng Pagkatuto ng Mag-aaral" data-en="Preview the Student Learning Flow">
+              I-preview ang Student Learning Flow
+            </h3>
+            <p
+              data-fil="Maaari mo ring suriin ang mga pahina ng aralin, gawain, pagtataya, pagsusulit, at progreso na ginagamit ng mga mag-aaral."
+              data-en="You can also review the lessons, activities, assessments, exam, and progress pages used by students."
+            >
+              Maaari mo ring i-review ang lessons, activities, assessments, exam, at progress pages na ginagamit ng mga mag-aaral.
+            </p>
+
+            <div class="account-action-row">
+              <a class="primary-button" href="lesson.html" data-fil="Buksan ang Mga Aralin" data-en="Open Lessons">Buksan ang Mga Aralin</a>
+              <a class="secondary-button" href="assessments.html" data-fil="Buksan ang Pagtataya" data-en="Open Assessments">Buksan ang Pagtataya</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Account ng Guro · Firebase" data-en="Teacher Account · Firebase">
+        Teacher Account · Firebase
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script src="script.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

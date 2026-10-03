@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="fil">
+ <!--
+ E-HISTORY — HOME PAGE
+ Purpose: Main landing page, navigation, platform overview, and learning journey.
+ Editing tip: Keep data-fil and data-en together so FIL/EN switching remains synchronized.
+-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="E-HISTORY - Interactive learning platform for Pag-aaral ng Kasaysayan" name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+   document.documentElement.dataset.theme=localStorage.getItem('ehistory-theme')||'light';
+  </script>
+  <title>
+   E-HISTORY | Pag-aaral ng Kasaysayan | E-HISTORY
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body data-page="home" data-title-en="E-HISTORY | Study of History | E-HISTORY" data-title-fil="E-HISTORY | Pag-aaral ng Kasaysayan | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+   <div class="navbar">
+    <a class="logo" href="index.html">
+     <div class="logo-symbol">
+      EH
+     </div>
+     <div class="logo-text">
+      <span class="logo-title">
+       E-HISTORY
+      </span>
+      <span class="logo-subtitle" data-en="Study of History" data-fil="Pag-aaral ng Kasaysayan">
+       Pag-aaral ng Kasaysayan
+      </span>
+     </div>
+    </a>
+    <button aria-label="Menu" class="menu-button" id="menuButton">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+     <a class="active" data-en="Home" data-fil="Tahanan" href="index.html">
+      Home
+     </a>
+     <a data-en="Lessons" data-fil="Aralin" href="lesson.html">
+      Aralin
+     </a>
+     <a data-en="Activities" data-fil="Gawain" href="activities.html">
+      Gawain
+     </a>
+     <a data-en="Assessments" data-fil="Pagtataya" href="#">
+      Pagtataya
+     </a>
+     <a data-en="Exam" data-fil="Pagsusulit" href="#">
+      Pagsusulit
+     </a>
+     <a data-en="Progress" data-fil="Progreso" href="#">
+      Progreso
+     </a>
+     <a data-en="Learning Assistant" data-fil="Katuwang sa Pag-aaral" href="#">
+      Katuwang sa Pag-aaral
+     </a>
+    </nav>
+    <div class="nav-tools">
+     <button class="tool-button" id="languageButton" type="button">
+      FIL
+     </button>
+     <button aria-label="Theme" class="tool-button" id="themeButton" type="button">
+      ☾
+     </button>
+     <button class="account-button" data-en="Account" data-fil="Account" type="button">
+      Account
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+   <!-- ==================== HERO / PAGE INTRODUCTION ==================== -->
+   <section class="hero">
+    <div class="history-grid">
+    </div>
+    <div class="hero-container">
+     <div class="hero-content">
+      <div class="section-label" data-en="DIGITAL HISTORY LEARNING" data-fil="DIGITAL NA PAG-AARAL NG KASAYSAYAN">
+       DIGITAL NA PAG-AARAL NG KASAYSAYAN
+      </div>
+      <h1>
+       <span data-en="Discover history." data-fil="Tuklasin ang kasaysayan.">
+        Tuklasin ang kasaysayan.
+       </span>
+       <br/>
+       <span data-en="Understand the present." data-fil="Unawain ang kasalukuyan.">
+        Unawain ang kasalukuyan.
+       </span>
+      </h1>
+      <p class="hero-description" data-en="Explore historical lessons, complete interactive activities, take assessments, and follow your learning journey through E-HISTORY." data-fil="Tuklasin ang mga aralin sa kasaysayan, lumahok sa mga interaktibong gawain, sagutan ang mga pagtataya, at subaybayan ang iyong paglalakbay sa pagkatuto sa E-HISTORY.">
+       Tuklasin ang mga aralin sa kasaysayan, lumahok sa mga interaktibong gawain, sagutan ang mga pagtataya, at subaybayan ang iyong paglalakbay sa pagkatuto sa E-HISTORY.
+      </p>
+      <div class="hero-buttons">
+       <a class="primary-button" data-en="Start Learning" data-fil="Simulan ang Pag-aaral" href="lesson.html">
+        Simulan ang Pag-aaral
+       </a>
+       <a class="secondary-button" href="#about">
+        <span data-en="Explore E-HISTORY" data-fil="Tuklasin ang E-HISTORY">
+         Tuklasin ang E-HISTORY
+        </span>
+        →
+       </a>
+      </div>
+      <div class="hero-info">
+       <div class="info-item">
+        <strong data-en="Grade 11" data-fil="Baitang 11">
+         Baitang 11
+        </strong>
+        <span data-en="Learners" data-fil="Mga Mag-aaral">
+         Mga Mag-aaral
+        </span>
+       </div>
+       <div class="info-divider">
+       </div>
+       <div class="info-item">
+        <strong data-en="Interactive" data-fil="Interaktibo">
+         Interaktibo
+        </strong>
+        <span data-en="Learning" data-fil="Pagkatuto">
+         Pagkatuto
+        </span>
+       </div>
+       <div class="info-divider">
+       </div>
+       <div class="info-item">
+        <strong>
+         Filipino
+        </strong>
+        <span>
+         &amp; English
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="hero-feature">
+      <div class="featured-tag" data-en="FEATURED UNIT" data-fil="TAMPOK NA YUNIT">
+       TAMPOK NA YUNIT
+      </div>
+      <div class="history-card">
+       <div class="archive-number">
+        <span data-fil="YUNIT / 01" data-en="UNIT / 01">YUNIT / 01</span>
+       </div>
+       <div class="history-year">
+        01
+       </div>
+       <div class="history-line">
+       </div>
+       <h2 data-en="Historical Consciousness" data-fil="Kamalayang Pangkasaysayan">
+        Kamalayang Pangkasaysayan
+       </h2>
+       <p data-en="Study historical consciousness, geography and culture, and beliefs and faith." data-fil="Pag-aralan ang kamalayang pangkasaysayan, heograpiya at kultura, at paniniwala at pananampalataya.">
+        Pag-aralan ang kamalayang pangkasaysayan, heograpiya at kultura, at paniniwala at pananampalataya.
+       </p>
+       <div class="history-card-footer">
+        <span>
+         <span data-fil="YUNIT 1" data-en="UNIT 1">YUNIT 1</span>
+        </span>
+        <span>
+         E-HISTORY
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- ==================== ABOUT THE PLATFORM ==================== -->
+   <section class="about-section" id="about">
+    <div class="section-heading">
+     <div>
+      <span class="section-label" data-en="ABOUT THE PLATFORM" data-fil="TUNGKOL SA PLATAPORMA">
+       TUNGKOL SA PLATFORM
+      </span>
+      <h2 data-en="History designed for modern learners." data-fil="Kasaysayan para sa makabagong mag-aaral.">
+       Kasaysayan para sa makabagong mag-aaral.
+      </h2>
+     </div>
+     <p data-en="E-HISTORY is a digital learning environment with lessons, mini activities, assessments, and progress tracking." data-fil="Ang E-HISTORY ay isang digital na kapaligiran sa pag-aaral na may mga aralin, mini gawain, pagtataya, at pagsubaybay sa progreso.">
+      Ang E-HISTORY ay isang digital na kapaligiran sa pag-aaral na may mga aralin, mini gawain, pagtataya, at progress tracking.
+     </p>
+    </div>
+    <div class="about-grid">
+     <article class="about-card">
+      <span class="card-number">
+       01
+      </span>
+      <div class="card-icon">
+       ◫
+      </div>
+      <h3 data-en="Lessons" data-fil="Mga Aralin">
+       Mga Aralin
+      </h3>
+      <p data-en="Read the organized content of every lesson." data-fil="Basahin ang organisadong nilalaman ng bawat aralin.">
+       Basahin ang organisadong nilalaman ng bawat aralin.
+      </p>
+     </article>
+     <article class="about-card">
+      <span class="card-number">
+       02
+      </span>
+      <div class="card-icon">
+       ◇
+      </div>
+      <h3 data-en="Mini Activities" data-fil="Mini Gawain">
+       Mini Gawain
+      </h3>
+      <p data-en="Three interactive activities for every lesson." data-fil="Tatlong interaktibong gawain sa bawat aralin.">
+       Tatlong interaktibong gawain sa bawat aralin.
+      </p>
+     </article>
+     <article class="about-card">
+      <span class="card-number">
+       03
+      </span>
+      <div class="card-icon">
+       ◎
+      </div>
+      <h3 data-en="Progress" data-fil="Progreso">
+       Progreso
+      </h3>
+      <p data-en="Completion and scores are tracked as the learner progresses." data-fil="Sinusubaybayan ang pagkumpleto at mga marka habang umuusad ang mag-aaral.">
+       Sinusubaybayan ang completion at mga marka habang umuusad ang mag-aaral.
+      </p>
+     </article>
+    </div>
+   </section>
+   <!-- ==================== LEARNING JOURNEY ==================== -->
+   <section class="journey-section">
+    <div class="journey-heading">
+     <span class="section-label" data-en="LEARNING JOURNEY" data-fil="PAGLALAKBAY SA PAGKATUTO">
+      PAGLALAKBAY SA PAGKATUTO
+     </span>
+     <h2 data-en="From lesson to assessment." data-fil="Mula aralin hanggang pagtataya.">
+      Mula aralin hanggang pagtataya.
+     </h2>
+    </div>
+    <div class="journey-container">
+     <div class="journey-item">
+      <div class="journey-number">
+       01
+      </div>
+      <div class="journey-circle">
+       A
+      </div>
+      <h3 data-en="Lesson" data-fil="Aralin">
+       Aralin
+      </h3>
+      <p data-en="Read and understand the concepts." data-fil="Basahin at unawain ang konsepto.">
+       Basahin at unawain ang konsepto.
+      </p>
+     </div>
+     <div class="journey-item">
+      <div class="journey-number">
+       02
+      </div>
+      <div class="journey-circle">
+       G
+      </div>
+      <h3 data-en="Mini Activities" data-fil="Mini Gawain">
+       Mini Gawain
+      </h3>
+      <p data-en="Complete the three mini activities." data-fil="Tapusin ang tatlong mini gawain.">
+       Tapusin ang tatlong mini gawain.
+      </p>
+     </div>
+     <div class="journey-item">
+      <div class="journey-number">
+       03
+      </div>
+      <div class="journey-circle">
+       P
+      </div>
+      <h3 data-en="Assessment" data-fil="Pagtataya">
+       Pagtataya
+      </h3>
+      <p data-en="Take the summative assessment." data-fil="Sagutan ang lagumang pagtataya.">
+       Sagutan ang summative assessment.
+      </p>
+     </div>
+     <div class="journey-item">
+      <div class="journey-number">
+       04
+      </div>
+      <div class="journey-circle">
+       E
+      </div>
+      <h3 data-en="Exam" data-fil="Pagsusulit">
+       Pagsusulit
+      </h3>
+      <p data-en="Term examination in a later phase." data-fil="Sagutan ang markahang pagsusulit kapag na-unlock na ito.">
+       Term examination sa susunod na phase.
+      </p>
+     </div>
+     <div class="journey-item">
+      <div class="journey-number">
+       05
+      </div>
+      <div class="journey-circle">
+       P
+      </div>
+      <h3 data-en="Progress" data-fil="Progreso">
+       Progreso
+      </h3>
+      <p data-en="Track the learning journey." data-fil="Subaybayan ang paglalakbay sa pagkatuto.">
+       Subaybayan ang learning journey.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+   <div class="footer-content">
+    <div>
+     <strong>
+      E-HISTORY
+     </strong>
+     <p data-en="Interactive History Learning Platform" data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan">
+      Interaktibong Platform sa Pag-aaral ng Kasaysayan
+     </p>
+    </div>
+    <div class="footer-right">
+     <span data-fil="Digital na Plataporma sa Pagkatuto para sa Baitang 11" data-en="Grade 11 Digital Learning Platform">Digital na Plataporma sa Pagkatuto para sa Baitang 11</span>
+    </div>
+   </div>
+  </footer>
+  <!-- ==================== JAVASCRIPT FILES ==================== -->
+  <script src="script.js">
+  </script>
+ </body>
+</html>
+

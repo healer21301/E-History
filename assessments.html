@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Assessments Center">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Mga Pagtataya | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assessments-center.css">
+</head>
+
+<body data-page="assessmentsCenter" data-title-fil="Mga Pagtataya | E-HISTORY" data-title-en="Assessments | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+          <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+          <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+          <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+          <a class="active" href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+          <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+          <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+          <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="assessment-center-hero">
+      <div class="assessment-center-hero-inner">
+        <div>
+          <span class="section-label" data-fil="SENTRO NG PAGTATAYA" data-en="ASSESSMENT CENTER">ASSESSMENT CENTER</span>
+          <h1 data-fil="Sukatin ang iyong pag-unawa." data-en="Measure your understanding.">Sukatin ang iyong pag-unawa.</h1>
+          <p
+            data-fil="Dito makikita ang iyong mga lagumang pagtataya, mga kinakailangan, kalagayan ng pagkumpleto, at pinakamataas na marka."
+            data-en="View your summative assessments, prerequisites, completion status, and best scores in one place."
+          >
+            Dito makikita ang iyong mga summative assessment, prerequisite, completion status, at pinakamataas na marka.
+          </p>
+        </div>
+
+        <div class="assessment-center-summary">
+          <span data-fil="PROGRESO NG PAGTATAYA SA YUNIT 1" data-en="UNIT 1 ASSESSMENT PROGRESS">YUNIT 1 ASSESSMENT PROGRESS</span>
+          <strong><b id="assessmentHubCompleted">0</b><small>/ 2</small></strong>
+          <p data-fil="Mga lagumang pagtataya na natapos" data-en="Summative assessments completed">Summative assessment na natapos</p>
+          <div class="hub-progress-track">
+            <div class="hub-progress-fill" id="assessmentHubProgress"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ASSESSMENT DIRECTORY ==================== -->
+    <section class="assessment-center-main">
+      <div class="assessment-overview-grid">
+        <article class="assessment-stat-card">
+          <span data-fil="NATAPOS" data-en="COMPLETED">NATAPOS</span>
+          <strong id="assessmentStatCompleted">0</strong>
+          <p data-fil="sa 2 pagtataya" data-en="of 2 assessments">sa 2 assessment</p>
+        </article>
+
+        <article class="assessment-stat-card">
+          <span data-fil="MAGAGAMIT NGAYON" data-en="AVAILABLE NOW">AVAILABLE NGAYON</span>
+          <strong id="assessmentStatAvailable">0</strong>
+          <p data-fil="maaaring sagutan" data-en="can be opened">maaaring sagutan</p>
+        </article>
+
+        <article class="assessment-stat-card">
+          <span data-fil="NAKA-LOCK" data-en="LOCKED">NAKA-LOCK</span>
+          <strong id="assessmentStatLocked">2</strong>
+          <p data-fil="may kinakailangan pa" data-en="still require prerequisites">may prerequisite pa</p>
+        </article>
+      </div>
+
+      <div class="assessment-center-heading">
+        <div>
+          <span class="section-label" data-fil="MGA PAGTATAYA" data-en="ASSESSMENTS">MGA PAGTATAYA</span>
+          <h2 data-fil="Mga Lagumang Pagtataya ng Yunit 1" data-en="Unit 1 Summative Assessments">Summative Assessment ng Yunit 1</h2>
+        </div>
+        <p
+          data-fil="Magbubukas lamang ang pagtataya pagkatapos makumpleto ang tatlong mini gawain ng kaukulang aralin."
+          data-en="Each assessment unlocks only after all three mini activities for its corresponding lesson are completed."
+        >
+          Ang assessment ay maa-unlock lamang pagkatapos makumpleto ang tatlong mini gawain ng kaukulang aralin.
+        </p>
+      </div>
+
+      <div class="assessment-directory">
+        <article class="assessment-hub-card" data-assessment-card="1">
+          <div class="assessment-hub-top">
+            <span class="assessment-hub-code" data-fil="PAGTATAYA 01" data-en="ASSESSMENT 01">PAGTATAYA 01</span>
+            <span class="assessment-hub-status" data-assessment-status="1" data-fil="NAKA-LOCK" data-en="LOCKED">NAKA-LOCK</span>
+          </div>
+
+          <div class="assessment-hub-body">
+            <div class="assessment-hub-number">01</div>
+            <div>
+              <span class="assessment-hub-label" data-fil="ARALIN 1" data-en="LESSON 1">ARALIN 1</span>
+              <h3 data-fil="Unang Lagumang Pagsusulit" data-en="First Summative Examination">First Summative Examination</h3>
+              <p
+                data-fil="30-aytem na lagumang pagtataya na may maramihang pagpipilian tungkol sa kamalayang pangkasaysayan."
+                data-en="A 30-item multiple-choice summative assessment on historical consciousness."
+              >
+                30-item multiple-choice summative assessment tungkol sa kamalayang pangkasaysayan.
+              </p>
+            </div>
+          </div>
+
+          <div class="assessment-hub-meta">
+            <div>
+              <span data-fil="MGA AYTEM" data-en="ITEMS">ITEMS</span>
+              <strong>30</strong>
+            </div>
+            <div>
+              <span data-fil="PINAKAMATAAS" data-en="BEST SCORE">PINAKAMATAAS</span>
+              <strong data-assessment-best="1">—</strong>
+            </div>
+          </div>
+
+          <a class="assessment-hub-action" data-assessment-open="1" href="assessment-1.html">
+            <span data-fil="Buksan ang Pagtataya" data-en="Open Assessment">Buksan ang Pagtataya</span>
+            <span>→</span>
+          </a>
+
+          <p class="assessment-prerequisite" data-assessment-note="1"></p>
+        </article>
+
+        <article class="assessment-hub-card" data-assessment-card="2">
+          <div class="assessment-hub-top">
+            <span class="assessment-hub-code" data-fil="PAGTATAYA 02" data-en="ASSESSMENT 02">PAGTATAYA 02</span>
+            <span class="assessment-hub-status" data-assessment-status="2" data-fil="NAKA-LOCK" data-en="LOCKED">NAKA-LOCK</span>
+          </div>
+
+          <div class="assessment-hub-body">
+            <div class="assessment-hub-number">02</div>
+            <div>
+              <span class="assessment-hub-label" data-fil="ARALIN 2" data-en="LESSON 2">ARALIN 2</span>
+              <h3 data-fil="Lagumang Pagsusulit" data-en="Summative Test">Summative Test</h3>
+              <p
+                data-fil="30-aytem na pinaghalong pagtataya na may Tama o Mali, Pagtukoy, at Maramihang Pagpipilian."
+                data-en="A 30-item mixed assessment with True or False, Identification, and Multiple Choice."
+              >
+                30-item mixed assessment na may Tama o Mali, Pagtukoy, at Multiple Choice.
+              </p>
+            </div>
+          </div>
+
+          <div class="assessment-hub-meta">
+            <div>
+              <span data-fil="MGA AYTEM" data-en="ITEMS">ITEMS</span>
+              <strong>30</strong>
+            </div>
+            <div>
+              <span data-fil="PINAKAMATAAS" data-en="BEST SCORE">PINAKAMATAAS</span>
+              <strong data-assessment-best="2">—</strong>
+            </div>
+          </div>
+
+          <a class="assessment-hub-action" data-assessment-open="2" href="assessment-2.html">
+            <span data-fil="Buksan ang Pagtataya" data-en="Open Assessment">Buksan ang Pagtataya</span>
+            <span>→</span>
+          </a>
+
+          <p class="assessment-prerequisite" data-assessment-note="2"></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Baitang 11 · Yunit 1" data-en="Grade 11 · Unit 1">Baitang 11 · Yunit 1</div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script src="script.js"></script>
+  <script src="assessments-center.js"></script>
+</body>
+</html>

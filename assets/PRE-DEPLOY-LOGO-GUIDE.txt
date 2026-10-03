@@ -1,0 +1,68 @@
+E-HISTORY — PRE-DEPLOY LOGO UPDATE
+===================================
+
+PURPOSE
+-------
+This patch replaces the temporary "EH" visual mark with the final E-HISTORY
+emblem before production deployment.
+
+NEW FILES
+---------
+assets/e-history-logo.png
+assets/e-history-favicon.png
+assets/apple-touch-icon.png
+
+REPLACE EXISTING FILES
+----------------------
+style.css
+account.css
+learning-assistant.css
+script.js
+
+WHERE THE LOGO IS APPLIED
+-------------------------
+1. Global website header / navbar on all pages that use style.css
+2. Login / registration account visual panel
+3. Learning Assistant hero badge
+4. Learning Assistant chat avatar
+5. Browser favicon
+6. Apple/mobile home-screen icon
+
+INSTALLATION
+------------
+1. Back up your current E-HISTORY folder.
+2. Copy the assets folder into the ROOT of E-HISTORY.
+   Your structure should include:
+       E-HISTORY/
+       ├── assets/
+       │   ├── e-history-logo.png
+       │   ├── e-history-favicon.png
+       │   └── apple-touch-icon.png
+       ├── style.css
+       ├── account.css
+       ├── learning-assistant.css
+       └── script.js
+3. Replace the four existing CSS/JS files with the files from this patch.
+4. Restart Live Server.
+5. Press Ctrl + Shift + R to bypass cached CSS/favicon files.
+
+CHECK BEFORE DEPLOYMENT
+-----------------------
+[ ] Header emblem appears on Home
+[ ] Header emblem appears on lesson/activity/assessment/exam pages
+[ ] Header emblem appears on Login and Register
+[ ] Large emblem appears on Login/Register visual panel
+[ ] Teacher Dashboard header emblem appears
+[ ] Student Account header emblem appears
+[ ] Learning Assistant uses the emblem instead of "EH"
+[ ] Browser tab shows the new favicon after hard refresh
+[ ] Light mode looks correct
+[ ] Dark mode looks correct
+[ ] Mobile navbar logo remains clear at small size
+
+NOTES
+-----
+- No Firebase configuration, Firestore Rules, student progress, assessment,
+  exam, or account data is changed by this patch.
+- The live E-HISTORY wordmark beside the header icon was intentionally kept
+  as HTML text so it stays crisp and accessible at every screen size.

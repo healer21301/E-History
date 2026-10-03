@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="fil">
+ <!--
+ E-HISTORY — LESSON 1 - MINI ACTIVITY 3
+ Purpose: Interactive mini activity 3 for Lesson 1.
+ Editing tip: Keep data-fil and data-en together so FIL/EN switching remains synchronized.
+-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="E-HISTORY - Interactive learning platform for Pag-aaral ng Kasaysayan" name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+   document.documentElement.dataset.theme=localStorage.getItem('ehistory-theme')||'light';
+  </script>
+  <title>
+   Mini Gawain 3 | E-HISTORY
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="activity.css" rel="stylesheet"/>
+ </head>
+ <body data-page="l1a3" data-title-en="Mini Activity 3 | E-HISTORY" data-title-fil="Mini Gawain 3 | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+   <div class="navbar">
+    <a class="logo" href="index.html">
+     <div class="logo-symbol">
+      EH
+     </div>
+     <div class="logo-text">
+      <span class="logo-title">
+       E-HISTORY
+      </span>
+      <span class="logo-subtitle" data-en="Study of History" data-fil="Pag-aaral ng Kasaysayan">
+       Pag-aaral ng Kasaysayan
+      </span>
+     </div>
+    </a>
+    <button aria-label="Menu" class="menu-button" id="menuButton">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+     <a data-en="Home" data-fil="Tahanan" href="index.html">
+      Home
+     </a>
+     <a class="active" data-en="Lessons" data-fil="Aralin" href="lesson.html">
+      Aralin
+     </a>
+     <a data-en="Activities" data-fil="Gawain" href="activities.html">
+      Gawain
+     </a>
+     <a data-en="Assessments" data-fil="Pagtataya" href="#">
+      Pagtataya
+     </a>
+     <a data-en="Exam" data-fil="Pagsusulit" href="#">
+      Pagsusulit
+     </a>
+     <a data-en="Progress" data-fil="Progreso" href="#">
+      Progreso
+     </a>
+     <a data-en="Learning Assistant" data-fil="Katuwang sa Pag-aaral" href="#">
+      Katuwang sa Pag-aaral
+     </a>
+    </nav>
+    <div class="nav-tools">
+     <button class="tool-button" id="languageButton" type="button">
+      FIL
+     </button>
+     <button aria-label="Theme" class="tool-button" id="themeButton" type="button">
+      ☾
+     </button>
+     <button class="account-button" data-en="Account" data-fil="Account" type="button">
+      Account
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+   <!-- ==================== ACTIVITY PAGE HERO ==================== -->
+   <section class="activity-hero">
+    <div class="activity-hero-inner">
+     <div>
+      <div class="reader-breadcrumb">
+       <a data-en="Lesson 01" data-fil="Aralin 01" href="lesson-1.html">
+        Aralin 01
+       </a>
+       <span>
+        /
+       </span>
+       <span data-en="Mini Activity 3" data-fil="Mini Gawain 3">
+        Mini Gawain 3
+       </span>
+      </div>
+      <span class="section-label" data-en="LESSON 01 · MINI ACTIVITY 03" data-fil="ARALIN 01 · MINI GAWAIN 03">
+       ARALIN 01 · MINI GAWAIN 03
+      </span>
+      <h1 data-en="Lessons from the Past, Decisions in the Present" data-fil="Aral ng Nakaraan, Pasya sa Kasalukuyan">
+       Aral ng Nakaraan, Pasya sa Kasalukuyan
+      </h1>
+      <p data-en="Choose the decision that best applies a lesson from the past." data-fil="Piliin ang pasyang pinakamahusay na gumagamit ng aral mula sa nakaraan.">
+       Piliin ang pasyang pinakamahusay na gumagamit ng aral mula sa nakaraan.
+      </p>
+     </div>
+     <div class="activity-hero-badge">
+      <span data-en="INTERACTIVE ACTIVITY" data-fil="INTERAKTIBONG GAWAIN">
+       INTERAKTIBONG GAWAIN
+      </span>
+      <strong>
+       03
+      </strong>
+      <small>
+       <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+      </small>
+     </div>
+    </div>
+   </section>
+   <!-- ==================== INTERACTIVE ACTIVITY AREA ==================== -->
+   <section class="mini-activity-section">
+    <div class="activity-lock" id="activityLock">
+     <div class="activity-lock-icon">
+      🔒
+     </div>
+     <span data-en="ACTIVITY LOCKED" data-fil="NAKA-LOCK ANG GAWAIN">
+      NAKA-LOCK ANG GAWAIN
+     </span>
+     <h2 data-en="Complete the previous requirement first." data-fil="Tapusin muna ang naunang kinakailangan.">
+      Tapusin muna ang naunang requirement.
+     </h2>
+     <a class="primary-button" data-en="Return to Lesson" data-fil="Bumalik sa Aralin" href="lesson-1.html">
+      Bumalik sa Aralin
+     </a>
+    </div>
+    <div class="mini-activity-shell" id="activityShell">
+     <div class="activity-status-bar">
+      <div>
+       <span data-en="PROGRESS" data-fil="PROGRESO">
+        PROGRESO
+       </span>
+       <strong id="activityCounter">
+        1 / 6
+       </strong>
+      </div>
+      <div class="activity-score-box">
+       <span data-en="SCORE" data-fil="PUNTOS">
+        PUNTOS
+       </span>
+       <strong id="activityScore">
+        0
+       </strong>
+      </div>
+     </div>
+     <div class="activity-progress-track">
+      <div class="activity-progress-fill" id="activityProgress">
+      </div>
+     </div>
+     <div class="activity-instruction">
+      <span data-en="INSTRUCTIONS" data-fil="PANUTO">
+       PANUTO
+      </span>
+      <p data-en="Choose the decision that best applies a lesson from the past." data-fil="Piliin ang pasyang pinakamahusay na gumagamit ng aral mula sa nakaraan.">
+       Piliin ang pasyang pinakamahusay na gumagamit ng aral mula sa nakaraan.
+      </p>
+     </div>
+     <div class="classification-card">
+      <span class="classification-number" id="activityNumber">
+       <span data-fil="AYTEM 01" data-en="ITEM 01">AYTEM 01</span>
+      </span>
+      <div class="classification-icon">
+       ◎
+      </div>
+      <h2 id="activityPrompt">
+      </h2>
+      <p data-en="Choose the correct answer." data-fil="Piliin ang tamang sagot." id="activityHint">
+       Piliin ang tamang sagot.
+      </p>
+     </div>
+     <div class="classification-options" id="activityOptions">
+     </div>
+     <div class="activity-feedback" id="activityFeedback">
+      <div class="feedback-icon" id="feedbackIcon">
+      </div>
+      <div>
+       <strong id="feedbackTitle">
+       </strong>
+       <p id="feedbackText">
+       </p>
+      </div>
+     </div>
+     <div class="activity-navigation">
+      <a class="activity-back-button" data-en="← Back to Lesson" data-fil="← Bumalik sa Aralin" href="lesson-1.html">
+       ← Bumalik sa Aralin
+      </a>
+      <button class="activity-next-button" disabled="" id="activityNext">
+       <span data-en="Next" data-fil="Susunod">
+        Susunod
+       </span>
+       →
+      </button>
+     </div>
+    </div>
+    <div class="activity-result" id="activityResult">
+     <div class="result-medal">
+      ✓
+     </div>
+     <span class="section-label" data-en="MINI ACTIVITY COMPLETED" data-fil="MINI GAWAIN NATAPOS">
+      MINI GAWAIN NATAPOS
+     </span>
+     <h2 data-en="Great work!" data-fil="Mahusay!">
+      Mahusay!
+     </h2>
+     <p data-en="Your result has been recorded." data-fil="Naitala ang iyong resulta.">
+      Naitala ang iyong resulta.
+     </p>
+     <div class="result-score-card">
+      <span data-en="YOUR SCORE" data-fil="IYONG PUNTOS">
+       IYONG PUNTOS
+      </span>
+      <strong id="activityFinalScore">
+       0 / 6
+      </strong>
+     </div>
+     <div class="result-actions">
+      <button class="secondary-result-button" data-en="Try Again" data-fil="Ulitin ang Gawain" id="activityRetry">
+       Ulitin ang Gawain
+      </button>
+      <a class="primary-result-button" href="lesson-1.html">
+       <span data-en="Return to Lesson" data-fil="Bumalik sa Aralin">
+        Bumalik sa Aralin
+       </span>
+       →
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+   <div class="footer-content">
+    <div>
+     <strong>
+      E-HISTORY
+     </strong>
+     <p data-en="Interactive History Learning Platform" data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan">
+      Interaktibong Platform sa Pag-aaral ng Kasaysayan
+     </p>
+    </div>
+    <div class="footer-right">
+     <span data-fil="Digital na Plataporma sa Pagkatuto para sa Baitang 11" data-en="Grade 11 Digital Learning Platform">Digital na Plataporma sa Pagkatuto para sa Baitang 11</span>
+    </div>
+   </div>
+  </footer>
+  <!-- ==================== JAVASCRIPT FILES ==================== -->
+  <script src="script.js">
+  </script>
+  <script src="activities.js">
+  </script>
+ </body>
+</html>
+

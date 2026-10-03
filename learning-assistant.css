@@ -1,0 +1,687 @@
+/* ============================================================
+   E-HISTORY — PHASE 15 LEARNING ASSISTANT
+   ============================================================
+   QUICK MAP
+   1. Accessibility helper
+   2. Page hero
+   3. Main assistant layout
+   4. Chat panel
+   5. Messages / response sources
+   6. Composer
+   7. Sidebar / quick actions
+   8. Progress card
+   9. Responsive rules
+   ============================================================ */
+
+/* ==================== 1. ACCESSIBILITY HELPER ==================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==================== 2. PAGE HERO ==================== */
+
+.assistant-main {
+    width: min(1450px, 94%);
+    margin: 0 auto;
+    padding: 68px 0 90px;
+}
+
+.assistant-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+    align-items: end;
+    padding: 14px 0 46px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.assistant-hero-copy {
+    max-width: 940px;
+}
+
+.assistant-eyebrow,
+.assistant-side-heading > span {
+    display: inline-block;
+    color: var(--green-light);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+}
+
+.assistant-hero h1 {
+    margin-top: 14px;
+    max-width: 940px;
+    font-family: var(--heading-font);
+    font-size: clamp(2.7rem, 5.3vw, 5.5rem);
+    line-height: .98;
+    letter-spacing: -.035em;
+}
+
+.assistant-hero p {
+    max-width: 790px;
+    margin-top: 24px;
+    color: var(--gray);
+    font-size: 1.03rem;
+}
+
+.assistant-hero-badge {
+    width: 148px;
+    height: 148px;
+    border: 1px solid var(--gray-light);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+.assistant-hero-badge span {
+    font-family: var(--heading-font);
+    color: var(--yellow);
+    font-size: 3.2rem;
+    line-height: 1;
+}
+
+.assistant-hero-badge small {
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: .63rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+/* ==================== 3. MAIN ASSISTANT LAYOUT ==================== */
+
+.assistant-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(310px, .72fr);
+    gap: 26px;
+    align-items: start;
+    padding-top: 34px;
+}
+
+.assistant-chat-card,
+.assistant-side-card {
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-radius: 24px;
+}
+
+.assistant-chat-card {
+    min-height: 690px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ==================== 4. CHAT PANEL ==================== */
+
+.assistant-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.assistant-avatar {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 13px;
+    background: var(--green-dark);
+    color: var(--yellow);
+    font-weight: 800;
+}
+
+.assistant-chat-header > div:nth-child(2) {
+    display: grid;
+    gap: 2px;
+}
+
+.assistant-chat-header strong {
+    font-size: .98rem;
+}
+
+.assistant-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--gray);
+    font-size: .79rem;
+}
+
+.assistant-status i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #50a977;
+}
+
+.assistant-clear {
+    margin-left: auto;
+    border: 1px solid var(--gray-light);
+    background: transparent;
+    color: var(--gray);
+    border-radius: 999px;
+    padding: 8px 13px;
+    cursor: pointer;
+}
+
+.assistant-clear:hover {
+    color: var(--black);
+    border-color: var(--green-light);
+}
+
+.assistant-messages {
+    flex: 1;
+    min-height: 440px;
+    max-height: 620px;
+    overflow-y: auto;
+    padding: 26px 24px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    scroll-behavior: smooth;
+}
+
+/* ==================== 5. MESSAGES / RESPONSE SOURCES ==================== */
+
+.assistant-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: 88%;
+}
+
+.assistant-message.user {
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.assistant-message.assistant {
+    align-self: flex-start;
+}
+
+.assistant-message-icon {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 9px;
+    background: var(--green-dark);
+    color: var(--yellow);
+    font-size: .7rem;
+    font-weight: 800;
+}
+
+.assistant-bubble {
+    padding: 14px 16px;
+    border: 1px solid var(--gray-light);
+    border-radius: 18px 18px 18px 5px;
+    background: color-mix(in srgb, var(--surface) 88%, var(--green-main) 12%);
+}
+
+.assistant-message.user .assistant-bubble {
+    border-color: var(--green-main);
+    border-radius: 18px 18px 5px 18px;
+    background: var(--green-dark);
+    color: #fff;
+}
+
+.assistant-bubble p {
+    white-space: pre-line;
+}
+
+.assistant-response-source {
+    margin-top: 12px;
+    padding-top: 11px;
+    border-top: 1px solid color-mix(in srgb, var(--gray-light) 78%, transparent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: var(--gray);
+    font-size: .77rem;
+}
+
+.assistant-response-source a {
+    margin-left: auto;
+    color: var(--green-light);
+    font-weight: 700;
+}
+
+.assistant-response-source a:hover {
+    text-decoration: underline;
+}
+
+.assistant-scope-note {
+    margin: 0 22px 14px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 9px;
+    border: 1px solid color-mix(in srgb, var(--yellow) 42%, var(--gray-light));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--yellow-light) 28%, var(--surface));
+    color: var(--gray);
+    font-size: .77rem;
+}
+
+.assistant-scope-note span {
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+/* ==================== 6. COMPOSER ==================== */
+
+.assistant-composer {
+    margin: 0 22px 22px;
+    padding: 8px 8px 8px 15px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    border: 1px solid var(--gray-light);
+    border-radius: 18px;
+    background: var(--cream);
+}
+
+.assistant-composer:focus-within {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-light) 14%, transparent);
+}
+
+.assistant-composer textarea {
+    width: 100%;
+    min-height: 44px;
+    max-height: 130px;
+    padding: 10px 0;
+    border: 0;
+    outline: 0;
+    resize: none;
+    background: transparent;
+    color: var(--black);
+    line-height: 1.45;
+}
+
+.assistant-composer textarea::placeholder {
+    color: var(--gray);
+}
+
+.assistant-send {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 13px;
+    background: var(--green-dark);
+    color: var(--yellow);
+    cursor: pointer;
+    font-size: 1.15rem;
+}
+
+.assistant-send:hover {
+    transform: translateY(-1px);
+}
+
+/* ==================== 7. SIDEBAR / QUICK ACTIONS ==================== */
+
+.assistant-sidebar {
+    display: grid;
+    gap: 18px;
+    position: sticky;
+    top: 102px;
+}
+
+.assistant-side-card {
+    padding: 21px;
+}
+
+.assistant-side-heading {
+    display: grid;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.assistant-side-heading strong {
+    font-family: var(--heading-font);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.assistant-quick-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.assistant-quick {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--gray-light);
+    border-radius: 15px;
+    background: transparent;
+    color: var(--black);
+    text-align: left;
+    cursor: pointer;
+}
+
+.assistant-quick:hover {
+    border-color: var(--green-light);
+    background: color-mix(in srgb, var(--green-main) 6%, var(--surface));
+}
+
+.assistant-quick > span {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--yellow) 25%, transparent);
+    color: var(--black);
+    font-weight: 800;
+}
+
+.assistant-quick div {
+    display: grid;
+}
+
+.assistant-quick strong {
+    font-size: .9rem;
+}
+
+.assistant-quick small {
+    margin-top: 2px;
+    color: var(--gray);
+    font-size: .73rem;
+}
+
+/* ==================== 8. PROGRESS / COVERAGE CARDS ==================== */
+
+.assistant-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.assistant-progress-number {
+    min-width: 76px;
+    font-family: var(--heading-font);
+    font-size: 2.45rem;
+    line-height: 1;
+}
+
+.assistant-progress-copy {
+    flex: 1;
+}
+
+.assistant-progress-copy > span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray);
+    font-size: .78rem;
+}
+
+.assistant-progress-track {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--gray-light);
+}
+
+.assistant-progress-track div {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--yellow);
+    transition: width .35s ease;
+}
+
+.assistant-progress-link {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--green-light);
+    font-size: .83rem;
+    font-weight: 700;
+}
+
+.assistant-covered-card > a {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 9px;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--gray-light);
+}
+
+.assistant-covered-card > a span {
+    color: var(--yellow);
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.assistant-covered-card > a b {
+    font-size: .83rem;
+}
+
+.assistant-covered-card > a:hover b {
+    color: var(--green-light);
+}
+
+/* ==================== 9. RESPONSIVE RULES ==================== */
+
+@media (max-width: 1040px) {
+    .assistant-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-sidebar {
+        position: static;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .assistant-covered-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 760px) {
+    .assistant-main {
+        width: min(94%, 720px);
+        padding-top: 42px;
+    }
+
+    .assistant-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .assistant-hero-badge {
+        width: 110px;
+        height: 110px;
+    }
+
+    .assistant-hero-badge span {
+        font-size: 2.5rem;
+    }
+
+    .assistant-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .assistant-covered-card {
+        grid-column: auto;
+    }
+
+    .assistant-chat-card {
+        min-height: 630px;
+        border-radius: 18px;
+    }
+
+    .assistant-messages {
+        padding: 20px 14px 16px;
+    }
+
+    .assistant-message {
+        max-width: 96%;
+    }
+
+    .assistant-scope-note,
+    .assistant-composer {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .assistant-chat-header {
+        padding: 16px 14px;
+    }
+
+    .assistant-clear {
+        padding: 7px 10px;
+        font-size: .76rem;
+    }
+
+    .assistant-side-card {
+        padding: 17px;
+    }
+}
+
+/* ============================================================
+   PHASE 17 + 19 — RESPONSIVE / COMPLETE DARK MODE AUDIT
+   ============================================================ */
+
+html[data-theme="dark"] .assistant-chat-card,
+html[data-theme="dark"] .assistant-side-card,
+html[data-theme="dark"] .assistant-hero-badge {
+    color: var(--black);
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .assistant-bubble {
+    background: color-mix(in srgb, var(--surface) 90%, var(--green-light) 10%);
+    color: var(--black);
+}
+
+html[data-theme="dark"] .assistant-message.user .assistant-bubble {
+    background: var(--green-dark);
+    color: var(--on-green);
+    border-color: color-mix(in srgb, var(--yellow) 28%, var(--green-dark));
+}
+
+html[data-theme="dark"] .assistant-scope-note {
+    background: color-mix(in srgb, var(--yellow-light) 45%, var(--surface));
+    color: var(--gray);
+}
+
+html[data-theme="dark"] .assistant-composer,
+html[data-theme="dark"] .assistant-quick-action {
+    background: var(--surface);
+    color: var(--black);
+}
+
+html[data-theme="dark"] .assistant-quick-action:hover {
+    background: color-mix(in srgb, var(--green-light) 9%, var(--surface));
+    border-color: var(--green-light);
+}
+
+html[data-theme="dark"] .assistant-quick-action-icon {
+    background: var(--yellow-light);
+    color: var(--yellow);
+}
+
+@media (max-width:760px) {
+    .assistant-main,
+    .assistant-hero,
+    .assistant-layout,
+    .assistant-chat-card,
+    .assistant-side-card,
+    .assistant-composer {
+        min-width: 0;
+    }
+
+    .assistant-composer {
+        padding: 10px;
+    }
+
+    .assistant-composer textarea {
+        min-width: 0;
+    }
+}
+
+@media (max-width:480px) {
+    .assistant-hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .assistant-chat-header {
+        flex-wrap: wrap;
+    }
+
+    .assistant-clear {
+        margin-left: 0;
+    }
+
+    .assistant-message {
+        max-width: 100%;
+    }
+}
+
+/* ============================================================
+   PRE-DEPLOY BRAND UPDATE — LEARNING ASSISTANT EMBLEM
+   ============================================================ */
+.assistant-hero-badge {
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: var(--green-dark);
+    background-image: url('assets/e-history-logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: color-mix(in srgb, var(--yellow) 32%, var(--gray-light));
+    box-shadow: 0 16px 36px rgba(4, 35, 25, .14);
+}
+
+.assistant-hero-badge span,
+.assistant-hero-badge small {
+    display: none;
+}
+
+.assistant-avatar {
+    overflow: hidden;
+    background-color: var(--green-dark);
+    background-image: url('assets/e-history-logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: transparent;
+    font-size: 0;
+    border: 1px solid color-mix(in srgb, var(--yellow) 36%, transparent);
+}
+
+html[data-theme="dark"] .assistant-hero-badge,
+html[data-theme="dark"] .assistant-avatar {
+    border-color: color-mix(in srgb, var(--yellow) 46%, transparent);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .24);
+}

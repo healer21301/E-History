@@ -1,0 +1,317 @@
+/* ============================================================
+   E-HISTORY — ASSESSMENT STYLES
+   ============================================================
+   Used by Summative Assessment pages.
+   Keep assessment-specific layout here; global layout remains
+   in style.css.
+   ============================================================ */
+
+/* E-HISTORY ASSESSMENTS */
+
+/* ==================== ASSESSMENT HERO ==================== */
+
+.assessment-hero {
+
+    padding: 78px 4% 58px;
+    border-bottom: 1px solid var(--gray-light);
+
+}
+
+.assessment-hero-inner {
+
+    width: min(1100px,100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 50px;
+    align-items: end;
+
+}
+
+.assessment-hero h1 {
+
+    margin-top: 18px;
+    font-family: var(--heading-font);
+    font-size: clamp(42px,5vw,66px);
+
+}
+
+.assessment-hero p {
+
+    margin-top: 12px;
+    color: var(--gray);
+
+}
+
+.assessment-badge {
+
+    width: 145px;
+    padding: 22px;
+    background: var(--green-dark);
+    color: white;
+    border-radius: 5px 20px 5px 20px;
+    text-align: center;
+
+}
+
+.assessment-badge strong {
+
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 54px;
+    color: var(--yellow);
+
+}
+
+.assessment-section {
+
+    width: min(900px,92%);
+    margin: auto;
+    padding: 55px 0 110px;
+
+}
+
+/* ==================== QUESTION WORKSPACE ==================== */
+
+.assessment-shell {
+
+    padding: 34px;
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-radius: 20px;
+
+}
+
+.assessment-top {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.assessment-top>div {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.assessment-top span {
+
+    font-size: 8px;
+    color: var(--gray);
+    letter-spacing: 1.4px;
+
+}
+
+.assessment-question {
+
+    margin-top: 25px;
+    padding: 28px;
+    background: var(--cream);
+    border: 1px solid var(--gray-light);
+    border-radius: 15px;
+
+}
+
+.assessment-question h2 {
+
+    font-family: var(--heading-font);
+    font-size: 26px;
+    line-height: 1.35;
+
+}
+
+.assessment-options {
+
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+
+}
+
+.assessment-option {
+
+    padding: 15px 17px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.assessment-option.selected {
+
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px color-mix(in srgb,var(--yellow) 20%,transparent);
+
+}
+
+.assessment-option span {
+
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--yellow-light);
+    color: var(--green-dark);
+    font-weight: 700;
+
+}
+
+.assessment-input {
+
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--black);
+
+}
+
+.assessment-nav {
+
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+}
+
+.assessment-submit-wrap {
+
+    margin-top: 28px;
+    padding-top: 22px;
+    text-align: center;
+    border-top: 1px solid var(--gray-light);
+
+}
+
+.assessment-submit-wrap p {
+
+    margin-top: 8px;
+    color: var(--gray);
+    font-size: 10px;
+
+}
+
+.assessment-submit-wrap .primary-button:disabled {
+
+    opacity: .4;
+    cursor: not-allowed;
+
+}
+
+.assessment-section .activity-lock {
+
+    display: none;
+
+}
+
+.assessment-section .activity-result {
+
+    display: none;
+
+}
+
+.assessment-section .activity-result.show {
+
+    display: block;
+
+}
+
+/* ==================== RESPONSIVE RULES ==================== */
+
+@media (max-width:700px) {
+
+    .assessment-hero-inner {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .assessment-badge {
+
+        width: 100%;
+
+    }
+
+    .assessment-shell {
+
+        padding: 20px;
+
+    }
+
+    .assessment-nav {
+
+        flex-direction: column;
+
+    }
+
+    .assessment-nav button {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ============================================================
+   PHASE 17 + 19 — RESPONSIVE / DARK MODE AUDIT
+   ============================================================ */
+
+html[data-theme="dark"] .assessment-shell,
+html[data-theme="dark"] .assessment-question,
+html[data-theme="dark"] .assessment-option,
+html[data-theme="dark"] .assessment-input {
+    color: var(--black);
+}
+
+html[data-theme="dark"] .assessment-option span {
+    background: var(--yellow-light);
+    color: var(--yellow);
+}
+
+html[data-theme="dark"] .assessment-option.selected {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px color-mix(in srgb,var(--yellow) 30%,transparent);
+}
+
+@media (max-width:700px) {
+    .assessment-hero-inner,
+    .assessment-section,
+    .assessment-shell,
+    .assessment-question {
+        min-width: 0;
+    }
+
+    .assessment-question {
+        padding: 22px 18px;
+    }
+
+    .assessment-option {
+        min-width: 0;
+    }
+
+    .assessment-option > * {
+        min-width: 0;
+    }
+}
+
+@media (max-width:420px) {
+    .assessment-hero h1 {
+        font-size: 36px;
+    }
+
+    .assessment-top {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+}

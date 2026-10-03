@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Student Account">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Student Account | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+
+<body data-page="studentAccount" data-title-fil="Account ng Mag-aaral | E-HISTORY" data-title-en="Student Account | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+          <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+          <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+          <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+          <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+          <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+          <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+          <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== STUDENT ACCOUNT HERO ==================== -->
+  <main>
+    <section class="account-hero">
+      <div class="account-hero-inner">
+        <div>
+          <span class="section-label" data-fil="ACCOUNT NG MAG-AARAL" data-en="STUDENT ACCOUNT">STUDENT ACCOUNT</span>
+          <h1 data-fil="Iyong E-HISTORY Profile" data-en="Your E-HISTORY Profile">Iyong E-HISTORY Profile</h1>
+          <p
+            data-fil="Tingnan ang iyong profile at progreso sa pagkatuto na naka-sync sa Firebase cloud database."
+            data-en="View your profile and learning progress synchronized with the Firebase cloud database."
+          >
+            Tingnan ang iyong profile at learning progress na naka-sync sa Firebase cloud database.
+          </p>
+        </div>
+
+        <div class="account-role-badge" data-fil="MAG-AARAL" data-en="STUDENT">STUDENT</div>
+      </div>
+    </section>
+
+    <section class="account-main">
+      <div class="prototype-notice">
+        <strong>ⓘ</strong>
+        <div>
+          <strong data-fil="Firebase Cloud Account" data-en="Firebase Cloud Account">Firebase Cloud Account</strong>
+          <p
+            data-fil="Gumagamit ang iyong account ng Firebase Authentication, at ang progreso sa pagkatuto ay sine-sync sa Cloud Firestore upang magamit sa ibang aparato pagkatapos mag-login."
+            data-en="Your account uses Firebase Authentication and learning progress syncs to Cloud Firestore for access on other devices after sign-in."
+          >
+            Ang iyong account ay gumagamit ng Firebase Authentication at ang learning progress ay sine-sync sa Cloud Firestore para magamit sa ibang device pagkatapos mag-login.
+          </p>
+        </div>
+      </div>
+
+      <div class="account-grid">
+        <aside class="account-profile-card">
+          <div class="account-avatar" id="studentAvatar">S</div>
+          <h2 id="studentName" data-fil="Mag-aaral" data-en="Student">Mag-aaral</h2>
+          <p id="studentEmail">—</p>
+
+          <div class="profile-details">
+            <div class="profile-detail">
+              <span data-fil="TUNGKULIN" data-en="ROLE">ROLE</span>
+              <strong data-fil="Mag-aaral" data-en="Student">Student</strong>
+            </div>
+
+            <div class="profile-detail">
+              <span data-fil="BAITANG / SEKSYON" data-en="GRADE / SECTION">GRADE / SECTION</span>
+              <strong id="studentGradeSection">—</strong>
+            </div>
+
+            <div class="profile-detail">
+              <span data-fil="LANGUAGE" data-en="LANGUAGE">LANGUAGE</span>
+              <strong id="studentLanguage">FIL</strong>
+            </div>
+          </div>
+
+          <button class="account-logout" type="button" data-account-logout data-fil="Mag-logout" data-en="Log Out">Mag-logout</button>
+        </aside>
+
+        <div class="account-dashboard-stack">
+          <article class="account-dashboard-card">
+            <span data-fil="BUOD NG PAGKATUTO" data-en="LEARNING SUMMARY">LEARNING SUMMARY</span>
+            <h3 data-fil="Kasalukuyang Progreso" data-en="Current Progress">Kasalukuyang Progreso</h3>
+
+            <div class="account-stat-grid">
+              <div class="account-stat">
+                <span data-fil="ARALIN" data-en="LESSONS">ARALIN</span>
+                <strong id="studentLessonCount">0 / 3</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="MINI GAWAIN" data-en="MINI ACTIVITIES">MINI GAWAIN</span>
+                <strong id="studentActivityCount">0 / 9</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="PAGTATAYA" data-en="ASSESSMENTS">PAGTATAYA</span>
+                <strong id="studentAssessmentCount">0 / 2</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="PAGSUSULIT" data-en="EXAM">EXAM</span>
+                <strong id="studentExamScore">—</strong>
+              </div>
+            </div>
+
+            <div class="account-action-row">
+              <a class="primary-button" href="progress.html" data-fil="Tingnan ang Progreso" data-en="View Progress">Tingnan ang Progreso</a>
+              <a class="secondary-button" href="activities.html" data-fil="Buksan ang Gawain" data-en="Open Activities">Buksan ang Gawain</a>
+            </div>
+          </article>
+
+          <article class="account-dashboard-card">
+            <span data-fil="TALA NG PAGTATAYA" data-en="ASSESSMENT RECORD">ASSESSMENT RECORD</span>
+            <h3 data-fil="Pinakamataas na Marka" data-en="Best Scores">Pinakamataas na Marka</h3>
+
+            <div class="account-stat-grid">
+              <div class="account-stat">
+                <span data-fil="Pagtataya 1" data-en="Assessment 1">Pagtataya 1</span>
+                <strong id="studentAssessment1Best">—</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="Pagtataya 2" data-en="Assessment 2">Pagtataya 2</span>
+                <strong id="studentAssessment2Best">—</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="Markahang Pagsusulit" data-en="Term Exam">Term Exam</span>
+                <strong id="studentExamBest">—</strong>
+              </div>
+
+              <div class="account-stat">
+                <span data-fil="Bilang ng Pagsubok sa Pagsusulit" data-en="Exam Attempts">Exam Attempts</span>
+                <strong id="studentExamAttempts">0</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Baitang 11 · Yunit 1" data-en="Grade 11 · Unit 1">Baitang 11 · Yunit 1</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

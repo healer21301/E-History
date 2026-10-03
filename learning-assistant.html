@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY lesson-based Learning Assistant for Grade 11 history">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Katuwang sa Pag-aaral | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="learning-assistant.css">
+</head>
+
+<body data-page="learning-assistant" data-title-fil="Katuwang sa Pag-aaral | E-HISTORY" data-title-en="Learning Assistant | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" data-fil="Tahanan" data-en="Home">Tahanan</a>
+        <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+        <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+        <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+        <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+        <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+        <a class="active" href="learning-assistant.html" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" data-fil="Account" data-en="Account" type="button">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== PAGE HERO ==================== -->
+  <main class="assistant-main">
+    <section class="assistant-hero">
+      <div class="assistant-hero-copy">
+        <span class="assistant-eyebrow" data-fil="KATUWANG SA PAG-AARAL" data-en="LEARNING ASSISTANT">KATUWANG SA PAG-AARAL</span>
+        <h1 data-fil="Magtanong. Magbalik-aral. Umusad sa susunod na hakbang." data-en="Ask. Review. Move to your next step.">Magtanong. Magbalik-aral. Umusad sa susunod na hakbang.</h1>
+        <p data-fil="Ang Katuwang sa Pag-aaral ay nakabatay lamang sa tatlong kasalukuyang aralin ng E-HISTORY. Maaari itong magpaliwanag ng konsepto, magbigay ng maikling buod, at magmungkahi ng susunod na gawain batay sa iyong progreso." data-en="The Learning Assistant is based only on E-HISTORY's three current lessons. It can explain concepts, give short summaries, and suggest your next task based on your progress.">
+          Ang Katuwang sa Pag-aaral ay nakabatay lamang sa tatlong kasalukuyang aralin ng E-HISTORY. Maaari itong magpaliwanag ng konsepto, magbigay ng maikling buod, at magmungkahi ng susunod na gawain batay sa iyong progreso.
+        </p>
+      </div>
+
+      <div class="assistant-hero-badge" aria-hidden="true">
+        <span>EH</span>
+        <small data-fil="ARALIN 1–3" data-en="LESSONS 1–3">ARALIN 1–3</small>
+      </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section class="assistant-layout">
+      <!-- ==================== CHAT PANEL ==================== -->
+      <article class="assistant-chat-card">
+        <div class="assistant-chat-header">
+          <div class="assistant-avatar">EH</div>
+          <div>
+            <strong data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</strong>
+            <span class="assistant-status"><i></i><span data-fil="Handang tumulong" data-en="Ready to help">Handang tumulong</span></span>
+          </div>
+          <button class="assistant-clear" id="assistantClear" type="button" data-fil="I-clear" data-en="Clear">I-clear</button>
+        </div>
+
+        <div class="assistant-messages" id="assistantMessages" aria-live="polite"></div>
+
+        <div class="assistant-scope-note">
+          <span>ⓘ</span>
+          <p data-fil="Hindi nagbibigay ang assistant ng answer key sa Lagumang Pagtataya o Markahang Pagsusulit. Sa halip, ipaliliwanag nito ang konseptong kailangan mong balikan." data-en="The assistant does not provide answer keys for Summative Assessments or the Term Examination. Instead, it explains the concept you need to review.">
+            Hindi nagbibigay ang assistant ng answer key sa Lagumang Pagtataya o Markahang Pagsusulit. Sa halip, ipaliliwanag nito ang konseptong kailangan mong balikan.
+          </p>
+        </div>
+
+        <form class="assistant-composer" id="assistantForm">
+          <label class="sr-only" for="assistantInput" data-fil="Ilagay ang iyong tanong" data-en="Enter your question">Ilagay ang iyong tanong</label>
+          <textarea
+            id="assistantInput"
+            rows="1"
+            maxlength="280"
+            data-placeholder-fil="Halimbawa: Ano ang pagkakaiba ng Ilaya at Ilawod?"
+            data-placeholder-en="Example: What is the difference between Ilaya and Ilawod?"
+            placeholder="Halimbawa: Ano ang pagkakaiba ng Ilaya at Ilawod?"
+          ></textarea>
+          <button id="assistantSend" class="assistant-send" type="submit" aria-label="Send">➜</button>
+        </form>
+      </article>
+
+      <!-- ==================== ASSISTANT SIDEBAR ==================== -->
+      <aside class="assistant-sidebar">
+        <section class="assistant-side-card">
+          <div class="assistant-side-heading">
+            <span data-fil="MABILISANG TULONG" data-en="QUICK HELP">MABILISANG TULONG</span>
+            <strong data-fil="Ano ang gusto mong gawin?" data-en="What would you like to do?">Ano ang gusto mong gawin?</strong>
+          </div>
+
+          <div class="assistant-quick-grid">
+            <button type="button" class="assistant-quick" data-assistant-action="summary-1">
+              <span>01</span>
+              <div><strong data-fil="Buod ng Aralin 1" data-en="Lesson 1 Summary">Buod ng Aralin 1</strong><small data-fil="Kamalayang Pangkasaysayan" data-en="Historical Consciousness">Kamalayang Pangkasaysayan</small></div>
+            </button>
+            <button type="button" class="assistant-quick" data-assistant-action="summary-2">
+              <span>02</span>
+              <div><strong data-fil="Buod ng Aralin 2" data-en="Lesson 2 Summary">Buod ng Aralin 2</strong><small data-fil="Heograpiya at Kultura" data-en="Geography and Culture">Heograpiya at Kultura</small></div>
+            </button>
+            <button type="button" class="assistant-quick" data-assistant-action="summary-3">
+              <span>03</span>
+              <div><strong data-fil="Buod ng Aralin 3" data-en="Lesson 3 Summary">Buod ng Aralin 3</strong><small data-fil="Paniniwala at Pananampalataya" data-en="Beliefs and Faith">Paniniwala at Pananampalataya</small></div>
+            </button>
+            <button type="button" class="assistant-quick" data-assistant-action="next-step">
+              <span>→</span>
+              <div><strong data-fil="Ano ang susunod ko?" data-en="What should I do next?">Ano ang susunod ko?</strong><small data-fil="Batay sa iyong progreso" data-en="Based on your progress">Batay sa iyong progreso</small></div>
+            </button>
+            <button type="button" class="assistant-quick" data-assistant-action="practice">
+              <span>?</span>
+              <div><strong data-fil="Practice Question" data-en="Practice Question">Practice Question</strong><small data-fil="Mabilis na balik-aral" data-en="Quick review">Mabilis na balik-aral</small></div>
+            </button>
+          </div>
+        </section>
+
+        <section class="assistant-side-card assistant-progress-card">
+          <div class="assistant-side-heading">
+            <span data-fil="IYONG PROGRESO" data-en="YOUR PROGRESS">IYONG PROGRESO</span>
+            <strong id="assistantProgressTitle" data-fil="Learning Journey" data-en="Learning Journey">Learning Journey</strong>
+          </div>
+
+          <div class="assistant-progress-row">
+            <div class="assistant-progress-number" id="assistantProgressPercent">0%</div>
+            <div class="assistant-progress-copy">
+              <span id="assistantProgressLabel" data-fil="0 sa 15 milestone" data-en="0 of 15 milestones">0 sa 15 milestone</span>
+              <div class="assistant-progress-track"><div id="assistantProgressFill"></div></div>
+            </div>
+          </div>
+
+          <a class="assistant-progress-link" href="progress.html">
+            <span data-fil="Tingnan ang buong progreso" data-en="View full progress">Tingnan ang buong progreso</span>
+            <b>→</b>
+          </a>
+        </section>
+
+        <section class="assistant-side-card assistant-covered-card">
+          <div class="assistant-side-heading">
+            <span data-fil="SAKLAW NG ASSISTANT" data-en="ASSISTANT COVERAGE">SAKLAW NG ASSISTANT</span>
+            <strong data-fil="Mga kasalukuyang aralin" data-en="Current lessons">Mga kasalukuyang aralin</strong>
+          </div>
+          <a href="lesson-1.html"><span>01</span><b data-fil="Kamalayang Pangkasaysayan" data-en="Historical Consciousness">Kamalayang Pangkasaysayan</b></a>
+          <a href="lesson-2.html"><span>02</span><b data-fil="Heograpiya at Kultura" data-en="Geography and Culture">Heograpiya at Kultura</b></a>
+          <a href="lesson-3.html"><span>03</span><b data-fil="Paniniwala at Pananampalataya" data-en="Beliefs and Faith">Paniniwala at Pananampalataya</b></a>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">Interaktibong Plataporma sa Pag-aaral ng Kasaysayan</p>
+      </div>
+      <div class="footer-right" data-fil="Katuwang sa Pag-aaral · Baitang 11" data-en="Learning Assistant · Grade 11">Katuwang sa Pag-aaral · Baitang 11</div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script src="script.js"></script>
+  <script src="learning-assistant.js"></script>
+</body>
+</html>

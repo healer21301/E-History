@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fil">
+ <!--
+ E-HISTORY — ACTIVITIES CENTER
+ Purpose: Central activity hub showing progress, scores, and locked/available states.
+ Editing tip: Keep data-fil and data-en together so FIL/EN switching remains synchronized.
+-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="E-HISTORY Activities Center" name="description"/>
+  <title>
+   Mga Gawain | E-HISTORY
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <link href="activities-center.css" rel="stylesheet"/>
+ </head>
+ <body data-page="activitiesCenter" data-title-en="Activities | E-HISTORY" data-title-fil="Mga Gawain | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+   <div class="navbar">
+    <a class="logo" href="index.html">
+     <div class="logo-symbol">
+      EH
+     </div>
+     <div class="logo-text">
+      <span class="logo-title">
+       E-HISTORY
+      </span>
+      <span class="logo-subtitle" data-en="Study of History" data-fil="Pag-aaral ng Kasaysayan">
+       Pag-aaral ng Kasaysayan
+      </span>
+     </div>
+    </a>
+    <button aria-label="Menu" class="menu-button" id="menuButton">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+     <a data-en="Home" data-fil="Tahanan" href="index.html">
+      Home
+     </a>
+     <a data-en="Lessons" data-fil="Aralin" href="lesson.html">
+      Aralin
+     </a>
+     <a class="active" data-en="Activities" data-fil="Gawain" href="activities.html">
+      Gawain
+     </a>
+     <a data-en="Assessments" data-fil="Pagtataya" href="#">
+      Pagtataya
+     </a>
+     <a data-en="Exam" data-fil="Pagsusulit" href="#">
+      Pagsusulit
+     </a>
+     <a data-en="Progress" data-fil="Progreso" href="#">
+      Progreso
+     </a>
+     <a data-en="Learning Assistant" data-fil="Katuwang sa Pag-aaral" href="#">
+      Katuwang sa Pag-aaral
+     </a>
+    </nav>
+    <div class="nav-tools">
+     <button class="tool-button" id="languageButton">
+      FIL
+     </button>
+     <button class="tool-button" id="themeButton">
+      ☾
+     </button>
+     <button class="account-button" data-en="Account" data-fil="Account">
+      Account
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+   <section class="activity-center-hero">
+    <div class="activity-center-hero-inner">
+     <div class="activity-center-copy">
+      <span class="section-label" data-en="HISTORY LAB" data-fil="LABORATORYO NG KASAYSAYAN">
+       HISTORY LAB
+      </span>
+      <h1 data-en="All your mini activities, in one place." data-fil="Lahat ng iyong mini gawain, nasa iisang lugar.">
+       Lahat ng iyong mini gawain, nasa iisang lugar.
+      </h1>
+      <p data-en="Open available activities, revisit completed work, and track your progress across the nine mini activities in Unit 1." data-fil="Buksan ang mga magagamit na gawain, balikan ang mga natapos na gawain, at subaybayan ang iyong progreso sa siyam na mini gawain ng Yunit 1.">
+       Buksan ang available na gawain, balikan ang natapos na activity, at subaybayan ang iyong progreso sa siyam na mini gawain ng Yunit 1.
+      </p>
+     </div>
+     <div class="activity-center-summary">
+      <span data-en="UNIT 1 ACTIVITY PROGRESS" data-fil="PROGRESO NG MGA GAWAIN SA YUNIT 1">
+       YUNIT 1 ACTIVITY PROGRESS
+      </span>
+      <strong>
+       <b id="activityHubCompleted">
+        0
+       </b>
+       <small>
+        / 9
+       </small>
+      </strong>
+      <p data-en="Mini activities completed" data-fil="Mga mini gawain na natapos">
+       Mini gawain na natapos
+      </p>
+      <div class="hub-progress-track">
+       <div class="hub-progress-fill" id="activityHubProgress">
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="activity-center-main">
+    <div class="hub-overview-grid">
+     <article class="hub-stat-card">
+      <span data-en="COMPLETED" data-fil="NATAPOS">
+       NATAPOS
+      </span>
+      <strong id="hubStatCompleted">
+       0
+      </strong>
+      <p data-en="of 9 mini activities" data-fil="sa 9 na mini gawain">
+       sa 9 na mini gawain
+      </p>
+     </article>
+     <article class="hub-stat-card">
+      <span data-en="AVAILABLE NOW" data-fil="MAGAGAMIT NGAYON">
+       AVAILABLE NGAYON
+      </span>
+      <strong id="hubStatAvailable">
+       1
+      </strong>
+      <p data-en="can be opened" data-fil="maaaring buksan">
+       maaaring buksan
+      </p>
+     </article>
+     <article class="hub-stat-card">
+      <span data-en="LOCKED" data-fil="NAKA-LOCK">
+       NAKA-LOCK
+      </span>
+      <strong id="hubStatLocked">
+       8
+      </strong>
+      <p data-en="still require prerequisites" data-fil="may kinakailangan pa">
+       may prerequisite pa
+      </p>
+     </article>
+    </div>
+    <div class="hub-section-heading">
+     <div>
+      <span class="section-label" data-en="MINI ACTIVITIES" data-fil="MGA MINI GAWAIN">
+       MGA MINI GAWAIN
+      </span>
+      <h2 data-en="Your journey through each lesson" data-fil="Paglalakbay sa bawat aralin">
+       Paglalakbay sa bawat aralin
+      </h2>
+     </div>
+     <p data-en="The next activity unlocks automatically after you complete its prerequisite." data-fil="Awtomatikong magbubukas ang susunod na gawain kapag natapos mo ang kinakailangan bago nito.">
+      Ang susunod na gawain ay awtomatikong nag-a-unlock kapag natapos mo ang requirement bago nito.
+     </p>
+    </div>
+    <div class="activity-lesson-groups">
+     <section class="activity-lesson-group" data-hub-lesson="1">
+      <div class="activity-group-header">
+       <div>
+        <span data-fil="ARALIN 01" data-en="LESSON 01">
+         ARALIN 01
+        </span>
+        <h3 data-en="Historical Consciousness" data-fil="Kamalayang Pangkasaysayan">
+         Kamalayang Pangkasaysayan
+        </h3>
+        <p data-en="Symbolism, tradition, folklore, and critical understanding of history." data-fil="Simbolismo, tradisyon, kuwentong-bayan, at mapanuring pag-unawa sa kasaysayan.">
+         Simbolismo, tradisyon, kuwentong-bayan, at mapanuring pag-unawa sa kasaysayan.
+        </p>
+       </div>
+       <div class="group-progress">
+        <strong id="hubLesson1Count">
+         0/3
+        </strong>
+        <span data-en="completed" data-fil="natapos">
+         natapos
+        </span>
+       </div>
+      </div>
+      <div class="activity-hub-grid">
+       <article class="activity-hub-card" data-file="lesson-1-activity-1.html" data-hub-activity="l1a1" data-title-en="Classification: Symbolism, Tradition, or Folklore" data-title-fil="Pag-uuri: Simbolismo, Tradisyon, o Kuwentong-bayan">
+        <div class="hub-card-top">
+         <span>
+          01
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         S
+        </div>
+        <h4 data-en="Indicator Classification" data-fil="Pag-uuri ng Palatandaan">
+         Pag-uuri ng Palatandaan
+        </h4>
+        <p data-en="Classify each example as Symbolism, Tradition, or Folklore." data-fil="Tukuyin kung Simbolismo, Tradisyon, o Kuwentong-bayan ang bawat halimbawa.">
+         Tukuyin kung Simbolismo, Tradisyon, o Kuwentong-bayan ang bawat halimbawa.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-1-activity-2.html" data-hub-activity="l1a2" data-title-en="Historically Conscious or Not?" data-title-fil="May Kamalayang Pangkasaysayan o Wala?">
+        <div class="hub-card-top">
+         <span>
+          02
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ◎
+        </div>
+        <h4 data-en="Scenario Analysis" data-fil="Pagsusuri ng Sitwasyon">
+         Pagsusuri ng Sitwasyon
+        </h4>
+        <p data-en="Decide whether each action demonstrates historical consciousness." data-fil="Suriin kung ang kilos sa sitwasyon ay nagpapakita ng kamalayang pangkasaysayan.">
+         Suriin kung ang kilos sa sitwasyon ay nagpapakita ng kamalayang pangkasaysayan.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-1-activity-3.html" data-hub-activity="l1a3" data-title-en="Lessons from the Past, Decisions in the Present" data-title-fil="Aral ng Nakaraan, Pasya sa Kasalukuyan">
+        <div class="hub-card-top">
+         <span>
+          03
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ↔
+        </div>
+        <h4 data-en="Present-Day Decisions" data-fil="Pasya sa Kasalukuyan">
+         Pasya sa Kasalukuyan
+        </h4>
+        <p data-en="Choose the decision that best applies a lesson from the past." data-fil="Piliin ang desisyong pinakamahusay na gumagamit ng aral mula sa nakaraan.">
+         Piliin ang desisyong pinakamahusay na gumagamit ng aral mula sa nakaraan.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+      </div>
+     </section>
+     <section class="activity-lesson-group" data-hub-lesson="2">
+      <div class="activity-group-header">
+       <div>
+        <span data-fil="ARALIN 02" data-en="LESSON 02">
+         ARALIN 02
+        </span>
+        <h3 data-en="Relationship Between Geography and Culture" data-fil="Ugnayan ng Heograpiya at Kultura">
+         Ugnayan ng Heograpiya at Kultura
+        </h3>
+        <p data-en="Ilaya, Ilawod, communities, boats, livelihoods, and culture shaped by environment." data-fil="Ilaya, Ilawod, mga pamayanan, bangka, kabuhayan, at kulturang hinuhubog ng kapaligiran.">
+         Ilaya, Ilawod, mga pamayanan, bangka, kabuhayan, at kulturang hinuhubog ng kapaligiran.
+        </p>
+       </div>
+       <div class="group-progress">
+        <strong id="hubLesson2Count">
+         0/3
+        </strong>
+        <span data-en="completed" data-fil="natapos">
+         natapos
+        </span>
+       </div>
+      </div>
+      <div class="activity-hub-grid">
+       <article class="activity-hub-card" data-file="lesson-2-activity-1.html" data-hub-activity="l2a1">
+        <div class="hub-card-top">
+         <span>
+          01
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ▲
+        </div>
+        <h4 data-en="Ilaya or Ilawod?" data-fil="Ilaya o Ilawod?">
+         Ilaya o Ilawod?
+        </h4>
+        <p data-en="Connect locations and livelihoods with Ilaya or Ilawod." data-fil="Iugnay ang lokasyon at kabuhayan sa Ilaya o Ilawod.">
+         Iugnay ang lokasyon at kabuhayan sa Ilaya o Ilawod.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-2-activity-2.html" data-hub-activity="l2a2">
+        <div class="hub-card-top">
+         <span>
+          02
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ◇
+        </div>
+        <h4 data-en="Identify the Community" data-fil="Kilalanin ang Pamayanan">
+         Kilalanin ang Pamayanan
+        </h4>
+        <p data-en="Identify Igorot, Binukot, Moro, Badjao, Vinta, Lepa-lepa, and related concepts." data-fil="Kilalanin ang Igorot, Binukot, Moro, Badjao, Vinta, Lepa-lepa, at iba pang konsepto.">
+         Kilalanin ang Igorot, Binukot, Moro, Badjao, Vinta, Lepa-lepa, at iba pang konsepto.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-2-activity-3.html" data-hub-activity="l2a3">
+        <div class="hub-card-top">
+         <span>
+          03
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ⌁
+        </div>
+        <h4 data-en="Geography → Culture" data-fil="Heograpiya → Kultura">
+         Heograpiya → Kultura
+        </h4>
+        <p data-en="Analyze how geography affects livelihood and culture." data-fil="Suriin kung paano nakaaapekto ang heograpiya sa kabuhayan at kultura.">
+         Suriin kung paano nakaaapekto ang heograpiya sa kabuhayan at kultura.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+      </div>
+     </section>
+     <section class="activity-lesson-group" data-hub-lesson="3">
+      <div class="activity-group-header">
+       <div>
+        <span data-fil="ARALIN 03" data-en="LESSON 03">
+         ARALIN 03
+        </span>
+        <h3 data-en="Beliefs and Faith" data-fil="Paniniwala at Pananampalataya">
+         Paniniwala at Pananampalataya
+        </h3>
+        <p data-en="Hiyas, Anting-anting, Ginhawa, the afterlife, and traditional healing." data-fil="Hiyas, Anting-anting, Ginhawa, kabilang-buhay, at tradisyonal na pagpapagaling.">
+         Hiyas, Anting-anting, Ginhawa, kabilang-buhay, at tradisyonal na pagpapagaling.
+        </p>
+       </div>
+       <div class="group-progress">
+        <strong id="hubLesson3Count">
+         0/3
+        </strong>
+        <span data-en="completed" data-fil="natapos">
+         natapos
+        </span>
+       </div>
+      </div>
+      <div class="activity-hub-grid">
+       <article class="activity-hub-card" data-file="lesson-3-activity-1.html" data-hub-activity="l3a1">
+        <div class="hub-card-top">
+         <span>
+          01
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ✦
+        </div>
+        <h4 data-en="Hiyas, Anting-anting, or Ginhawa?" data-fil="Hiyas, Anting-anting, o Ginhawa?">
+         Hiyas, Anting-anting, o Ginhawa?
+        </h4>
+        <p data-en="Identify the concept described in each example." data-fil="Tukuyin ang konseptong inilalarawan sa bawat halimbawa.">
+         Tukuyin ang konseptong inilalarawan sa bawat halimbawa.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-3-activity-2.html" data-hub-activity="l3a2">
+        <div class="hub-card-top">
+         <span>
+          02
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         +
+        </div>
+        <h4 data-en="Traditional Healing Challenge" data-fil="Tradisyonal na Pagpapagaling">
+         Tradisyonal na Pagpapagaling
+        </h4>
+        <p data-en="Identify Baylan, Tutho, Hilot, Tawas, Pausok, and Kamangyan." data-fil="Kilalanin ang Baylan, Tutho, Hilot, Tawas, Pausok, at Kamangyan.">
+         Kilalanin ang Baylan, Tutho, Hilot, Tawas, Pausok, at Kamangyan.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+       <article class="activity-hub-card" data-file="lesson-3-activity-3.html" data-hub-activity="l3a3">
+        <div class="hub-card-top">
+         <span>
+          03
+         </span>
+         <b class="hub-status">
+         </b>
+        </div>
+        <div class="hub-card-icon">
+         ◌
+        </div>
+        <h4 data-en="Life, Afterlife, or Healing?" data-fil="Buhay, Kabilang-Buhay, o Pagpapagaling?">
+         Buhay, Kabilang-Buhay, o Pagpapagaling?
+        </h4>
+        <p data-en="Place each concept in the correct dimension or category." data-fil="Ilagay ang bawat konsepto sa tamang dimensyon o kategorya.">
+         Ilagay ang bawat konsepto sa tamang dimensyon o kategorya.
+        </p>
+        <div class="hub-card-meta">
+         <span class="hub-best">
+         </span>
+         <span>
+          <span data-fil="6 aytem" data-en="6 items">6 aytem</span>
+         </span>
+        </div>
+        <a class="hub-card-action">
+        </a>
+       </article>
+      </div>
+     </section>
+    </div>
+    <div class="hub-note">
+     <div class="hub-note-icon">
+      i
+     </div>
+     <div>
+      <strong data-en="How does unlocking work?" data-fil="Paano gumagana ang pagbubukas ng mga gawain?">
+       Paano gumagana ang unlocking?
+      </strong>
+      <p data-en="Within a lesson, Mini Activity 1 must be completed before 2, and 2 before 3. Lesson 2 activities unlock after Summative Assessment 1; Lesson 3 activities unlock after Summative Assessment 2." data-fil="Sa loob ng isang aralin, kailangang matapos ang Mini Gawain 1 bago ang 2, at ang 2 bago ang 3. Magbubukas ang mga gawain sa Aralin 2 pagkatapos ng Lagumang Pagtataya 1; magbubukas naman ang mga gawain sa Aralin 3 pagkatapos ng Lagumang Pagtataya 2.">
+       Sa loob ng isang aralin, kailangang matapos ang Mini Gawain 1 bago ang 2, at ang 2 bago ang 3. Ang Aralin 2 activities ay nagbubukas pagkatapos ng Summative Assessment 1; ang Aralin 3 activities ay pagkatapos ng Summative Assessment 2.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+   <div class="footer-content">
+    <div>
+     <strong>
+      E-HISTORY
+     </strong>
+     <p data-en="Interactive History Learning Platform" data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan">
+      Interaktibong Platform sa Pag-aaral ng Kasaysayan
+     </p>
+    </div>
+    <div class="footer-right">
+     <span data-fil="Baitang 11 · Laboratoryo ng Kasaysayan" data-en="Grade 11 · History Lab">Baitang 11 · Laboratoryo ng Kasaysayan</span>
+    </div>
+   </div>
+  </footer>
+  <!-- ==================== JAVASCRIPT FILES ==================== -->
+  <script src="script.js">
+  </script>
+  <script src="activities-center.js">
+  </script>
+ </body>
+</html>
+

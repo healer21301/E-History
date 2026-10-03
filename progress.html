@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Learning Journey and Progress">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Progreso | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="progress.css">
+</head>
+
+<body data-page="progress" data-title-fil="Progreso | E-HISTORY" data-title-en="Progress | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+          <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+          <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+          <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+          <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+          <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+          <a class="active" href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+          <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="progress-hero">
+      <div class="progress-hero-inner">
+        <div>
+          <span class="section-label" data-fil="PAGLALAKBAY SA PAGKATUTO" data-en="LEARNING JOURNEY">LEARNING JOURNEY</span>
+          <h1 data-fil="Subaybayan ang iyong pag-unlad." data-en="Track your learning journey.">Subaybayan ang iyong pag-unlad.</h1>
+          <p
+            data-fil="Tingnan sa iisang lugar ang mga natapos na aralin, mini gawain, lagumang pagtataya, at markahang pagsusulit."
+            data-en="View completed lessons, mini activities, summative assessments, and the term examination in one place."
+          >
+            Tingnan ang natapos na aralin, mini gawain, summative assessment, at term examination sa iisang lugar.
+          </p>
+        </div>
+
+        <div class="overall-progress-card">
+          <span data-fil="KABUUANG PROGRESO" data-en="OVERALL PROGRESS">OVERALL PROGRESS</span>
+          <strong id="overallProgressValue">0%</strong>
+          <div class="overall-progress-track">
+            <div class="overall-progress-fill" id="overallProgressFill"></div>
+          </div>
+          <p id="overallMilestoneText">0 / 15</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <section class="progress-main">
+      <div class="progress-stat-grid">
+        <article class="progress-stat-card">
+          <span data-fil="ARALIN" data-en="LESSONS">ARALIN</span>
+          <strong id="progressLessons">0 / 3</strong>
+          <p data-fil="aralin na kumpleto" data-en="lessons completed">aralin na kumpleto</p>
+        </article>
+
+        <article class="progress-stat-card">
+          <span data-fil="MINI GAWAIN" data-en="MINI ACTIVITIES">MINI GAWAIN</span>
+          <strong id="progressActivities">0 / 9</strong>
+          <p data-fil="mini gawain na natapos" data-en="mini activities completed">mini gawain na natapos</p>
+        </article>
+
+        <article class="progress-stat-card">
+          <span data-fil="PAGTATAYA" data-en="ASSESSMENTS">PAGTATAYA</span>
+          <strong id="progressAssessments">0 / 2</strong>
+          <p data-fil="lagumang pagtataya na natapos" data-en="summative assessments completed">summative assessment na natapos</p>
+        </article>
+
+        <article class="progress-stat-card">
+          <span data-fil="PAGSUSULIT" data-en="EXAM">PAGSUSULIT</span>
+          <strong id="progressExam">—</strong>
+          <p data-fil="markahang pagsusulit" data-en="term examination">term examination</p>
+        </article>
+      </div>
+
+      <!-- ==================== CONTINUE LEARNING ==================== -->
+      <div class="continue-journey-card">
+        <div>
+          <span data-fil="IPAGPATULOY ANG PAG-AARAL" data-en="CONTINUE LEARNING">IPAGPATULOY ANG PAG-AARAL</span>
+          <h2 id="continueJourneyTitle" data-fil="Aralin 1 · Mini Gawain 1" data-en="Lesson 1 · Mini Activity 1">Aralin 1 · Mini Gawain 1</h2>
+          <p id="continueJourneyDescription"></p>
+        </div>
+        <a id="continueJourneyLink" class="primary-button" href="lesson-1-activity-1.html">
+          <span data-fil="Magpatuloy" data-en="Continue">Magpatuloy</span>
+        </a>
+      </div>
+
+      <!-- ==================== LESSON DETAILS ==================== -->
+      <div class="progress-section-heading">
+        <div>
+          <span class="section-label" data-fil="DETALYADONG PROGRESO" data-en="DETAILED PROGRESS">DETALYADONG PROGRESO</span>
+          <h2 data-fil="Tala ng Pagkatuto sa Yunit 1" data-en="Unit 1 Learning Record">Yunit 1 Learning Record</h2>
+        </div>
+      </div>
+
+      <div class="lesson-progress-list">
+        <!-- Lesson 1 -->
+        <article class="lesson-progress-panel" data-progress-lesson="1">
+          <div class="lesson-progress-header">
+            <div>
+              <span data-fil="ARALIN 01" data-en="LESSON 01">ARALIN 01</span>
+              <h3 data-fil="Kamalayang Pangkasaysayan" data-en="Historical Consciousness">Kamalayang Pangkasaysayan</h3>
+            </div>
+            <strong data-lesson-percent="1">0%</strong>
+          </div>
+
+          <div class="lesson-progress-track">
+            <div class="lesson-progress-fill" data-lesson-fill="1"></div>
+          </div>
+
+          <div class="progress-record-grid">
+            <div class="progress-record" data-record="l1a1"><span data-fil="Mini Gawain 1" data-en="Mini Activity 1">Mini Gawain 1</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l1a2"><span data-fil="Mini Gawain 2" data-en="Mini Activity 2">Mini Gawain 2</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l1a3"><span data-fil="Mini Gawain 3" data-en="Mini Activity 3">Mini Gawain 3</span><strong>—</strong></div>
+            <div class="progress-record" data-record="assessment1"><span data-fil="Lagumang Pagtataya 1" data-en="Summative Assessment 1">Summative Assessment 1</span><strong>—</strong></div>
+          </div>
+        </article>
+
+        <!-- Lesson 2 -->
+        <article class="lesson-progress-panel" data-progress-lesson="2">
+          <div class="lesson-progress-header">
+            <div>
+              <span data-fil="ARALIN 02" data-en="LESSON 02">ARALIN 02</span>
+              <h3 data-fil="Ugnayan ng Heograpiya at Kultura" data-en="Relationship Between Geography and Culture">Ugnayan ng Heograpiya at Kultura</h3>
+            </div>
+            <strong data-lesson-percent="2">0%</strong>
+          </div>
+
+          <div class="lesson-progress-track">
+            <div class="lesson-progress-fill" data-lesson-fill="2"></div>
+          </div>
+
+          <div class="progress-record-grid">
+            <div class="progress-record" data-record="l2a1"><span data-fil="Mini Gawain 1" data-en="Mini Activity 1">Mini Gawain 1</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l2a2"><span data-fil="Mini Gawain 2" data-en="Mini Activity 2">Mini Gawain 2</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l2a3"><span data-fil="Mini Gawain 3" data-en="Mini Activity 3">Mini Gawain 3</span><strong>—</strong></div>
+            <div class="progress-record" data-record="assessment2"><span data-fil="Lagumang Pagtataya 2" data-en="Summative Assessment 2">Summative Assessment 2</span><strong>—</strong></div>
+          </div>
+        </article>
+
+        <!-- Lesson 3 -->
+        <article class="lesson-progress-panel" data-progress-lesson="3">
+          <div class="lesson-progress-header">
+            <div>
+              <span data-fil="ARALIN 03" data-en="LESSON 03">ARALIN 03</span>
+              <h3 data-fil="Paniniwala at Pananampalataya" data-en="Beliefs and Faith">Paniniwala at Pananampalataya</h3>
+            </div>
+            <strong data-lesson-percent="3">0%</strong>
+          </div>
+
+          <div class="lesson-progress-track">
+            <div class="lesson-progress-fill" data-lesson-fill="3"></div>
+          </div>
+
+          <div class="progress-record-grid">
+            <div class="progress-record" data-record="l3a1"><span data-fil="Mini Gawain 1" data-en="Mini Activity 1">Mini Gawain 1</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l3a2"><span data-fil="Mini Gawain 2" data-en="Mini Activity 2">Mini Gawain 2</span><strong>—</strong></div>
+            <div class="progress-record" data-record="l3a3"><span data-fil="Mini Gawain 3" data-en="Mini Activity 3">Mini Gawain 3</span><strong>—</strong></div>
+            <div class="progress-record" data-record="exam"><span data-fil="Markahang Pagsusulit" data-en="Term Examination">Term Examination</span><strong>—</strong></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Baitang 11 · Yunit 1" data-en="Grade 11 · Unit 1">Baitang 11 · Yunit 1</div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script src="script.js"></script>
+  <script src="progress.js"></script>
+</body>
+</html>

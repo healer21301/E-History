@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Term Examination">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+  <title>Unang Markahang Pagsusulit | E-HISTORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="exam.css">
+</head>
+
+<body data-page="exam" data-title-fil="Unang Markahang Pagsusulit | E-HISTORY" data-title-en="First Quarter Examination | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">Pag-aaral ng Kasaysayan</span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+          <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+          <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+          <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+          <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+          <a class="active" href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+          <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+          <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="exam-hero">
+      <div class="exam-hero-inner">
+        <div>
+          <span class="section-label" data-fil="UNANG MARKAHANG PAGSUSULIT" data-en="FIRST QUARTER EXAMINATION">
+            UNANG MARKAHANG PAGSUSULIT
+          </span>
+          <h1 data-fil="Pag-aaral ng Kasaysayan at Lipunang Pilipino" data-en="Study of History and Philippine Society">
+            Pag-aaral ng Kasaysayan at Lipunang Pilipino
+          </h1>
+          <p data-fil="T.P. 2026–2027 · 60 Aytem na Maramihang Pagpipilian" data-en="S.Y. 2026–2027 · 60 Multiple Choice Items">
+            S.Y. 2026–2027 · 60 Multiple Choice Items
+          </p>
+        </div>
+
+        <div class="exam-hero-badge">
+          <span data-fil="MARKAHANG PAGSUSULIT" data-en="TERM EXAM">TERM EXAM</span>
+          <strong>60</strong>
+          <small data-fil="mga aytem" data-en="items">items</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXAM WORKSPACE ==================== -->
+    <section class="exam-section">
+      <!-- Access lock -->
+      <div class="exam-lock" id="examLock">
+        <div class="exam-lock-icon">🔒</div>
+        <span data-fil="NAKA-LOCK ANG PAGSUSULIT" data-en="EXAMINATION LOCKED">NAKA-LOCK ANG PAGSUSULIT</span>
+        <h2 data-fil="Kumpletuhin muna ang mga kinakailangang gawain." data-en="Complete the required learning tasks first.">
+          Kumpletuhin muna ang mga kinakailangang gawain.
+        </h2>
+        <p
+          data-fil="Kailangang matapos ang Lagumang Pagtataya 1, Lagumang Pagtataya 2, at lahat ng tatlong mini gawain ng Aralin 3 bago ma-unlock ang markahang pagsusulit."
+          data-en="Complete Summative Assessment 1, Summative Assessment 2, and all three Lesson 3 mini activities before the term examination unlocks."
+        >
+          Kailangang matapos ang Summative Assessment 1, Summative Assessment 2, at lahat ng tatlong mini gawain ng Aralin 3 bago ma-unlock ang term examination.
+        </p>
+        <a class="primary-button" href="progress.html" data-fil="Tingnan ang Progreso" data-en="View Progress">Tingnan ang Progreso</a>
+      </div>
+
+      <!-- Start screen -->
+      <div class="exam-start" id="examStart">
+        <span class="section-label" data-fil="BAGO MAGSIMULA" data-en="BEFORE YOU BEGIN">BAGO MAGSIMULA</span>
+        <h2 data-fil="Basahin muna ang mga paalala." data-en="Read the reminders first.">Basahin muna ang mga paalala.</h2>
+
+        <div class="exam-instruction-grid">
+          <article>
+            <strong>01</strong>
+            <h3 data-fil="60 Aytem" data-en="60 Items">60 Items</h3>
+            <p data-fil="Sagutan ang bawat aytem na may maramihang pagpipilian." data-en="Answer every multiple-choice item.">Sagutan ang bawat multiple-choice item.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3 data-fil="Gabay sa mga Tanong" data-en="Question Navigator">Question Navigator</h3>
+            <p data-fil="Makikita kung alin ang nasagutan at hindi pa nasasagutan." data-en="See which questions are answered or still unanswered.">
+              Makikita kung alin ang nasagutan at hindi pa nasasagutan.
+            </p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3 data-fil="Pinal na Pagsusumite" data-en="Final Submission">Final Submission</h3>
+            <p data-fil="Suriing mabuti ang mga sagot bago isumite." data-en="Review your answers carefully before submitting.">
+              Suriing mabuti ang mga sagot bago isumite.
+            </p>
+          </article>
+        </div>
+
+        <button class="exam-start-button" id="examStartButton" type="button">
+          <span data-fil="Simulan ang Pagsusulit" data-en="Start Examination">Simulan ang Pagsusulit</span>
+          <span>→</span>
+        </button>
+      </div>
+
+      <!-- Exam shell -->
+      <div class="exam-shell" id="examShell">
+        <div class="exam-main-column">
+          <div class="exam-status-row">
+            <div>
+              <span data-fil="TANONG" data-en="QUESTION">TANONG</span>
+              <strong id="examCounter">1 / 60</strong>
+            </div>
+            <div>
+              <span data-fil="NASAGUTAN" data-en="ANSWERED">NASAGUTAN</span>
+              <strong id="examAnswered">0 / 60</strong>
+            </div>
+          </div>
+
+          <div class="exam-progress-track">
+            <div class="exam-progress-fill" id="examProgressFill"></div>
+          </div>
+
+          <div class="exam-question-card" id="examQuestionArea"></div>
+
+          <div class="exam-controls">
+            <button class="exam-secondary-button" id="examPrev" type="button" data-fil="← Nakaraan" data-en="← Previous">← Nakaraan</button>
+            <button class="exam-primary-button" id="examNext" type="button">
+              <span data-fil="Susunod" data-en="Next">Susunod</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="exam-navigator-panel">
+          <div class="exam-navigator-heading">
+            <span data-fil="GABAY SA MGA TANONG" data-en="QUESTION NAVIGATOR">QUESTION NAVIGATOR</span>
+            <p data-fil="Piliin ang numero upang bumalik sa isang aytem." data-en="Select a number to jump to an item.">
+              Piliin ang numero upang bumalik sa isang item.
+            </p>
+          </div>
+
+          <div class="exam-navigator-grid" id="examNavigator"></div>
+
+          <div class="exam-navigator-legend">
+            <span><i class="answered"></i><b data-fil="Nasagutan" data-en="Answered">Nasagutan</b></span>
+            <span><i class="current"></i><b data-fil="Kasalukuyan" data-en="Current">Kasalukuyan</b></span>
+          </div>
+
+          <button class="exam-submit-button" id="examSubmit" type="button" disabled>
+            <span data-fil="Isumite ang Pagsusulit" data-en="Submit Examination">Isumite ang Pagsusulit</span>
+          </button>
+          <p class="exam-submit-note" id="examSubmitNote"
+             data-fil="Sagutan muna ang lahat ng 60 aytem."
+             data-en="Answer all 60 items first.">
+            Sagutan muna ang lahat ng 60 items.
+          </p>
+        </aside>
+      </div>
+
+      <!-- Result -->
+      <div class="exam-result" id="examResult">
+        <div class="exam-result-medal">✓</div>
+        <span class="section-label" data-fil="PAGSUSULIT NATAPOS" data-en="EXAMINATION COMPLETED">PAGSUSULIT NATAPOS</span>
+        <h2 data-fil="Naitala na ang iyong resulta." data-en="Your result has been recorded.">Naitala na ang iyong resulta.</h2>
+        <p data-fil="Maaari mo ring makita ang resultang ito sa pahina ng Progreso." data-en="You can also review this result on your Progress page.">
+          Maaari mong makita ang resultang ito sa iyong Progress page.
+        </p>
+
+        <div class="exam-result-score">
+          <span data-fil="IYONG ISKOR" data-en="YOUR SCORE">IYONG ISKOR</span>
+          <strong id="examFinalScore">0 / 60</strong>
+          <small id="examFinalPercent">0%</small>
+        </div>
+
+        <div class="exam-result-actions">
+          <a class="primary-button" href="progress.html" data-fil="Tingnan ang Progreso" data-en="View Progress">Tingnan ang Progreso</a>
+          <button class="exam-outline-button" id="examRetry" type="button" data-fil="Ulitin bilang Pagsasanay" data-en="Retry for Practice">
+            Ulitin para sa Practice
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== SUBMIT CONFIRMATION ==================== -->
+  <div class="exam-modal" id="examModal" aria-hidden="true">
+    <div class="exam-modal-card" role="dialog" aria-modal="true" aria-labelledby="examModalTitle">
+      <span class="section-label" data-fil="PINAL NA PAGSUSUMITE" data-en="FINAL SUBMISSION">FINAL SUBMISSION</span>
+      <h2 id="examModalTitle" data-fil="Isumite na ang pagsusulit?" data-en="Submit the examination?">Isumite na ang pagsusulit?</h2>
+      <p
+        data-fil="Kapag ipinagpatuloy, kakalkulahin at itatala ang iyong marka. Maaari mo pa rin itong ulitin bilang pagsasanay sa kasalukuyang bersyon."
+        data-en="If you continue, your score will be computed and recorded. In this prototype, you may still retry it for practice."
+      >
+        Kapag ipinagpatuloy, iko-compute at itatala ang iyong marka. Maaari mo pa rin itong ulitin bilang practice sa kasalukuyang prototype.
+      </p>
+      <div class="exam-modal-actions">
+        <button class="exam-outline-button" id="examCancelSubmit" type="button" data-fil="Balikan ang Sagot" data-en="Review Answers">Balikan ang Sagot</button>
+        <button class="exam-primary-button" id="examConfirmSubmit" type="button" data-fil="Oo, Isumite" data-en="Yes, Submit">Oo, Isumite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Baitang 11 · Yunit 1" data-en="Grade 11 · Unit 1">Baitang 11 · Yunit 1</div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script src="script.js"></script>
+  <script src="exam.js"></script>
+</body>
+</html>

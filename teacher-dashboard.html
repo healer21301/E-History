@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fil" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-HISTORY Teacher Dashboard">
+
+  <!-- ==================== FONTS ==================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Apply saved theme before the page paints. -->
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('ehistory-theme') || 'light';
+  </script>
+
+  <title>Teacher Dashboard | E-HISTORY</title>
+
+  <!-- ==================== STYLES ==================== -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="teacher-dashboard.css">
+</head>
+
+<body
+  data-page="teacherDashboard"
+  data-title-fil="Dashboard ng Guro | E-HISTORY"
+  data-title-en="Teacher Dashboard | E-HISTORY"
+>
+
+  <!-- ============================================================
+       HEADER / GLOBAL NAVIGATION
+       ============================================================ -->
+  <header class="header">
+    <div class="navbar">
+      <a class="logo" href="index.html">
+        <div class="logo-symbol">EH</div>
+        <div class="logo-text">
+          <span class="logo-title">E-HISTORY</span>
+          <span class="logo-subtitle" data-fil="Pag-aaral ng Kasaysayan" data-en="Study of History">
+            Pag-aaral ng Kasaysayan
+          </span>
+        </div>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" data-fil="Tahanan" data-en="Home">Home</a>
+        <a href="lesson.html" data-fil="Aralin" data-en="Lessons">Aralin</a>
+        <a href="activities.html" data-fil="Gawain" data-en="Activities">Gawain</a>
+        <a href="assessments.html" data-fil="Pagtataya" data-en="Assessments">Pagtataya</a>
+        <a href="exam.html" data-fil="Pagsusulit" data-en="Exam">Pagsusulit</a>
+        <a href="progress.html" data-fil="Progreso" data-en="Progress">Progreso</a>
+        <a href="#" data-fil="Katuwang sa Pag-aaral" data-en="Learning Assistant">Katuwang sa Pag-aaral</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="tool-button" id="languageButton" type="button">FIL</button>
+        <button class="tool-button" id="themeButton" type="button" aria-label="Theme">☾</button>
+        <button class="account-button" type="button" data-fil="Account" data-en="Account">Account</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         DASHBOARD HERO
+         ============================================================ -->
+    <section class="teacher-hero">
+      <div class="teacher-hero-inner">
+        <div>
+          <span class="section-label" data-fil="DASHBOARD NG GURO" data-en="TEACHER DASHBOARD">
+            TEACHER DASHBOARD
+          </span>
+
+          <h1 data-fil="Subaybayan ang pagkatuto ng iyong mga mag-aaral." data-en="Monitor your students' learning journey.">
+            Subaybayan ang pagkatuto ng iyong mga mag-aaral.
+          </h1>
+
+          <p
+            data-fil="Direktang kinukuha ng dashboard na ito ang mga profile ng mag-aaral at progreso sa pagkatuto mula sa Firebase Cloud Firestore."
+            data-en="This dashboard reads student profiles and learning progress live from Firebase Cloud Firestore."
+          >
+            Live na kinukuha ng dashboard na ito ang Student profiles at learning progress mula sa Firebase Cloud Firestore.
+          </p>
+        </div>
+
+        <div class="teacher-identity-card">
+          <span data-fil="NAKA-LOGIN BILANG" data-en="SIGNED IN AS">NAKA-LOGIN BILANG</span>
+          <strong id="teacherDashboardName" data-fil="Guro" data-en="Teacher">Guro</strong>
+          <small id="teacherDashboardEmail">—</small>
+          <a href="teacher-account.html" data-fil="Buksan ang Profile" data-en="Open Profile">
+            Buksan ang Profile →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DASHBOARD CONTENT
+         ============================================================ -->
+    <section class="teacher-dashboard-section">
+
+      <!-- ==================== LOADING / ERROR ==================== -->
+      <div class="teacher-state-card" id="teacherLoadingState">
+        <div class="teacher-loader" aria-hidden="true"></div>
+        <div>
+          <strong data-fil="Kinukuha ang mga tala ng mag-aaral..." data-en="Loading live student records...">
+            Kinukuha ang live student records...
+          </strong>
+          <p data-fil="Kumokonekta sa Cloud Firestore." data-en="Connecting to Cloud Firestore.">
+            Kumokonekta sa Cloud Firestore.
+          </p>
+        </div>
+      </div>
+
+      <div class="teacher-state-card error" id="teacherErrorState" hidden>
+        <div class="teacher-state-icon">!</div>
+        <div>
+          <strong id="teacherErrorTitle" data-fil="Hindi ma-load ang dashboard." data-en="Unable to load the dashboard.">Hindi ma-load ang dashboard.</strong>
+          <p id="teacherErrorText">—</p>
+        </div>
+      </div>
+
+      <div id="teacherDashboardContent" hidden>
+
+        <!-- ==================== CLASS SUMMARY ==================== -->
+        <div class="teacher-summary-grid">
+          <article class="teacher-summary-card featured">
+            <span data-fil="KABUUANG MAG-AARAL" data-en="TOTAL STUDENTS">KABUUANG MAG-AARAL</span>
+            <strong id="teacherTotalStudents">0</strong>
+            <small data-fil="Mga account ng mag-aaral sa Firestore" data-en="Student accounts in Firestore">
+              Student accounts sa Firestore
+            </small>
+          </article>
+
+          <article class="teacher-summary-card">
+            <span data-fil="KARANIWANG PROGRESO" data-en="AVERAGE PROGRESS">AVERAGE PROGRESS</span>
+            <strong id="teacherAverageProgress">0%</strong>
+            <small data-fil="Batay sa 15 yugto ng pagkatuto" data-en="Based on 15 learning milestones">
+              Batay sa 15 learning milestones
+            </small>
+          </article>
+
+          <article class="teacher-summary-card">
+            <span data-fil="NAKATAPOS NG PAGSUSULIT" data-en="EXAM COMPLETED">NAKATAPOS NG EXAM</span>
+            <strong id="teacherExamCompleted">0</strong>
+            <small data-fil="May naka-save na resulta ng markahang pagsusulit" data-en="With a saved term exam result">
+              May naka-save na term exam result
+            </small>
+          </article>
+
+          <article class="teacher-summary-card">
+            <span data-fil="100% COMPLETE" data-en="100% COMPLETE">100% COMPLETE</span>
+            <strong id="teacherFullyCompleted">0</strong>
+            <small data-fil="Nakumpleto ang lahat ng milestones" data-en="Completed every learning milestone">
+              Nakumpleto ang lahat ng milestones
+            </small>
+          </article>
+        </div>
+
+        <!-- ==================== TOOLBAR ==================== -->
+        <div class="teacher-toolbar">
+          <div class="teacher-search-box">
+            <span>⌕</span>
+            <input
+              id="teacherStudentSearch"
+              type="search"
+              autocomplete="off"
+              data-placeholder-fil="Maghanap ayon sa pangalan, email, o section..."
+              data-placeholder-en="Search by name, email, or section..."
+              placeholder="Maghanap ayon sa pangalan, email, o section..."
+            >
+          </div>
+
+          <select id="teacherStatusFilter" class="teacher-filter-select" aria-label="Student progress filter">
+            <option value="all" data-fil="Lahat ng Kalagayan" data-en="All Statuses">Lahat ng Status</option>
+            <option value="not-started" data-fil="Hindi Pa Nagsisimula" data-en="Not Started">Hindi Pa Nagsisimula</option>
+            <option value="in-progress" data-fil="Kasalukuyang Ginagawa" data-en="In Progress">In Progress</option>
+            <option value="completed" data-fil="Natapos" data-en="Completed">Completed</option>
+          </select>
+
+          <select id="teacherSortFilter" class="teacher-filter-select" aria-label="Sort students">
+            <option value="name" data-fil="Ayusin: Pangalan" data-en="Sort: Name">Ayusin: Pangalan</option>
+            <option value="progress-desc" data-fil="Ayusin: Pinakamataas na Progreso" data-en="Sort: Highest Progress">Ayusin: Pinakamataas na Progreso</option>
+            <option value="progress-asc" data-fil="Ayusin: Pinakamababang Progreso" data-en="Sort: Lowest Progress">Ayusin: Pinakamababang Progreso</option>
+          </select>
+
+          <button class="teacher-refresh-button" id="teacherRefreshButton" type="button">
+            <span>↻</span>
+            <span data-fil="I-refresh" data-en="Refresh">I-refresh</span>
+          </button>
+        </div>
+
+        <!-- ==================== STUDENT LIST ==================== -->
+        <section class="teacher-student-panel">
+          <div class="teacher-panel-heading">
+            <div>
+              <span class="section-label" data-fil="MGA TALA NG KLASE" data-en="LIVE CLASS RECORDS">LIVE CLASS RECORDS</span>
+              <h2 data-fil="Mga Mag-aaral" data-en="Students">Mga Mag-aaral</h2>
+            </div>
+            <strong id="teacherVisibleCount">0</strong>
+          </div>
+
+          <div class="teacher-student-list" id="teacherStudentList"></div>
+
+          <div class="teacher-empty-state" id="teacherEmptyState" hidden>
+            <strong data-fil="Walang tumutugmang mag-aaral." data-en="No matching students found.">
+              Walang tumutugmang mag-aaral.
+            </strong>
+            <p data-fil="Baguhin ang paghahanap o salaan upang makakita ng ibang tala." data-en="Change the search or filter to view another record.">
+              Baguhin ang search o filter upang makakita ng ibang record.
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       STUDENT DETAIL MODAL
+       ============================================================ -->
+  <div class="teacher-modal" id="studentDetailModal" hidden>
+    <div class="teacher-modal-backdrop" data-close-student-modal></div>
+
+    <section class="teacher-modal-panel" role="dialog" aria-modal="true" aria-labelledby="studentDetailName">
+      <button class="teacher-modal-close" type="button" data-close-student-modal aria-label="Close">×</button>
+
+      <div class="teacher-modal-header">
+        <div class="teacher-student-avatar" id="studentDetailAvatar">S</div>
+        <div>
+          <span class="section-label" data-fil="TALA NG MAG-AARAL" data-en="STUDENT RECORD">STUDENT RECORD</span>
+          <h2 id="studentDetailName" data-fil="Mag-aaral" data-en="Student">Mag-aaral</h2>
+          <p id="studentDetailMeta">—</p>
+        </div>
+      </div>
+
+      <div class="teacher-detail-progress">
+        <div>
+          <span data-fil="KABUUANG PROGRESO" data-en="OVERALL PROGRESS">OVERALL PROGRESS</span>
+          <strong id="studentDetailPercent">0%</strong>
+        </div>
+        <div class="teacher-detail-progress-track">
+          <div id="studentDetailProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="teacher-detail-grid" id="studentDetailGrid"></div>
+
+      <div class="teacher-modal-footer">
+        <span data-fil="Tala sa Firebase · tingin lamang" data-en="Read-only Firebase record">Read-only Firebase record</span>
+        <button class="teacher-secondary-button" type="button" data-close-student-modal data-fil="Isara" data-en="Close">Isara</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <strong>E-HISTORY</strong>
+        <p data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan" data-en="Interactive History Learning Platform">
+          Interaktibong Platform sa Pag-aaral ng Kasaysayan
+        </p>
+      </div>
+      <div class="footer-right" data-fil="Dashboard ng Guro · Firebase" data-en="Teacher Dashboard · Live Firebase">
+        Teacher Dashboard · Live Firebase
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script src="script.js"></script>
+  <script type="module" src="teacher-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="fil">
+ <!--
+ E-HISTORY — LESSON ARCHIVE
+ Purpose: Lesson library, lesson unlock states, and lesson progress overview.
+ Editing tip: Keep data-fil and data-en together so FIL/EN switching remains synchronized.
+-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="E-HISTORY - Interactive learning platform for Pag-aaral ng Kasaysayan" name="description"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <script>
+   document.documentElement.dataset.theme=localStorage.getItem('ehistory-theme')||'light';
+  </script>
+  <title>
+   Mga Aralin | E-HISTORY
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body data-page="lessons" data-title-en="Lessons | E-HISTORY" data-title-fil="Mga Aralin | E-HISTORY">
+  <!-- ==================== HEADER / GLOBAL NAVIGATION ==================== -->
+  <header class="header">
+   <div class="navbar">
+    <a class="logo" href="index.html">
+     <div class="logo-symbol">
+      EH
+     </div>
+     <div class="logo-text">
+      <span class="logo-title">
+       E-HISTORY
+      </span>
+      <span class="logo-subtitle" data-en="Study of History" data-fil="Pag-aaral ng Kasaysayan">
+       Pag-aaral ng Kasaysayan
+      </span>
+     </div>
+    </a>
+    <button aria-label="Menu" class="menu-button" id="menuButton">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+     <a data-en="Home" data-fil="Tahanan" href="index.html">
+      Home
+     </a>
+     <a class="active" data-en="Lessons" data-fil="Aralin" href="lesson.html">
+      Aralin
+     </a>
+     <a data-en="Activities" data-fil="Gawain" href="activities.html">
+      Gawain
+     </a>
+     <a data-en="Assessments" data-fil="Pagtataya" href="#">
+      Pagtataya
+     </a>
+     <a data-en="Exam" data-fil="Pagsusulit" href="#">
+      Pagsusulit
+     </a>
+     <a data-en="Progress" data-fil="Progreso" href="#">
+      Progreso
+     </a>
+     <a data-en="Learning Assistant" data-fil="Katuwang sa Pag-aaral" href="#">
+      Katuwang sa Pag-aaral
+     </a>
+    </nav>
+    <div class="nav-tools">
+     <button class="tool-button" id="languageButton" type="button">
+      FIL
+     </button>
+     <button aria-label="Theme" class="tool-button" id="themeButton" type="button">
+      ☾
+     </button>
+     <button class="account-button" data-en="Account" data-fil="Account" type="button">
+      Account
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+   <!-- ==================== LESSON PAGE HERO ==================== -->
+   <section class="lesson-hero">
+    <div class="lesson-hero-container">
+     <div>
+      <span class="section-label" data-en="DIGITAL LESSON ARCHIVE" data-fil="DIGITAL NA ARKIBO NG MGA ARALIN">
+       DIGITAL NA ARKIBO NG ARALIN
+      </span>
+      <h1>
+       <span data-en="Explore the lessons" data-fil="Tuklasin ang mga aralin">
+        Tuklasin ang mga aralin
+       </span>
+       <span data-en="of Unit 1." data-fil="ng Yunit 1.">
+        ng Yunit 1.
+       </span>
+      </h1>
+      <p data-en="Three lessons on historical consciousness, geography and culture, and beliefs and faith." data-fil="Tatlong aralin tungkol sa kamalayang pangkasaysayan, heograpiya at kultura, at paniniwala at pananampalataya.">
+       Tatlong aralin tungkol sa kamalayang pangkasaysayan, heograpiya at kultura, at paniniwala at pananampalataya.
+      </p>
+     </div>
+     <div class="lesson-archive-info">
+      <span class="archive-small-label">
+       E-HISTORY
+      </span>
+      <strong>
+       <span data-fil="Yunit 1" data-en="Unit 1">Yunit 1</span>
+      </strong>
+      <p data-en="Historical Consciousness" data-fil="Kamalayang Pangkasaysayan">
+       Kamalayang Pangkasaysayan
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- ==================== LESSON LIBRARY / CARDS ==================== -->
+   <section class="lesson-library">
+    <div class="library-heading">
+     <div>
+      <span class="section-label" data-en="LESSON COLLECTION" data-fil="KOLEKSIYON NG ARALIN">
+       KOLEKSIYON NG ARALIN
+      </span>
+      <h2>
+       <span data-fil="Yunit 1" data-en="Unit 1">Yunit 1</span>
+      </h2>
+     </div>
+     <p data-en="The next lesson unlocks automatically after the required assessment is completed." data-fil="Awtomatikong nag-a-unlock ang susunod na aralin kapag natapos ang kinakailangang pagtataya.">
+      Awtomatikong nag-a-unlock ang susunod na aralin kapag natapos ang kinakailangang pagtataya.
+     </p>
+    </div>
+    <div class="lesson-grid">
+     <article class="lesson-card" data-lesson="1">
+      <div class="lesson-card-top">
+       <span class="lesson-code">
+        <span data-fil="ARALIN 01" data-en="LESSON 01">ARALIN 01</span>
+       </span>
+       <span class="lesson-status available" data-en="AVAILABLE" data-fil="MAGAGAMIT">
+        AVAILABLE
+       </span>
+      </div>
+      <div class="lesson-art lesson-art-1">
+       <span>
+        01
+       </span>
+       <div class="lesson-art-circle">
+       </div>
+      </div>
+      <div class="lesson-card-content">
+       <span class="lesson-category">
+        <span data-fil="YUNIT 1" data-en="UNIT 1">YUNIT 1</span>
+       </span>
+       <h3 data-en="Indicators and Characteristics of Historical Consciousness" data-fil="Mga Palatandaan at Katangian ng Kamalayang Pangkasaysayan">
+        Mga Palatandaan at Katangian ng Kamalayang Pangkasaysayan
+       </h3>
+       <p data-en="Learn the meaning, indicators, and characteristics of historical consciousness." data-fil="Alamin ang kahulugan, mga palatandaan, at mga katangian ng kamalayang pangkasaysayan.">
+        Alamin ang kahulugan, mga palatandaan, at mga katangian ng kamalayang pangkasaysayan.
+       </p>
+       <div class="lesson-meta">
+        <span data-en="3 Mini Activities" data-fil="3 Mini Gawain">
+         3 Mini Gawain
+        </span>
+        <span class="lesson-progress-text" data-lesson-progress="1">
+         0%
+        </span>
+       </div>
+       <a class="lesson-button" data-lesson-link="1" href="lesson-1.html">
+        <span data-en="Explore Lesson" data-fil="Tuklasin ang Aralin">
+         Tuklasin ang Aralin
+        </span>
+        <span>
+         →
+        </span>
+       </a>
+      </div>
+     </article>
+     <article class="lesson-card" data-lesson="2">
+      <div class="lesson-card-top">
+       <span class="lesson-code">
+        <span data-fil="ARALIN 02" data-en="LESSON 02">ARALIN 02</span>
+       </span>
+       <span class="lesson-status locked" data-en="LOCKED" data-fil="NAKA-LOCK">
+        NAKA-LOCK
+       </span>
+      </div>
+      <div class="lesson-art lesson-art-2">
+       <span>
+        02
+       </span>
+       <div class="lesson-art-circle">
+       </div>
+      </div>
+      <div class="lesson-card-content">
+       <span class="lesson-category">
+        <span data-fil="YUNIT 1" data-en="UNIT 1">YUNIT 1</span>
+       </span>
+       <h3 data-en="Relationship Between Geography and Culture" data-fil="Ugnayan ng Heograpiya at Kultura">
+        Ugnayan ng Heograpiya at Kultura
+       </h3>
+       <p data-en="Examine how geography influences the livelihood, culture, and way of life of communities." data-fil="Suriin kung paano nakaaapekto ang heograpiya sa kabuhayan, kultura, at pamumuhay ng mga pamayanan.">
+        Suriin kung paano nakaaapekto ang heograpiya sa kabuhayan, kultura, at pamumuhay ng mga pamayanan.
+       </p>
+       <div class="lesson-meta">
+        <span data-en="3 Mini Activities" data-fil="3 Mini Gawain">
+         3 Mini Gawain
+        </span>
+        <span class="lesson-progress-text" data-lesson-progress="2">
+         0%
+        </span>
+       </div>
+       <a class="lesson-button locked-button" data-lesson-link="2" href="#">
+        <span data-en="Complete the previous requirement first" data-fil="Tapusin muna ang naunang kinakailangan">
+         Tapusin muna ang naunang requirement
+        </span>
+        <span>
+         →
+        </span>
+       </a>
+      </div>
+     </article>
+     <article class="lesson-card" data-lesson="3">
+      <div class="lesson-card-top">
+       <span class="lesson-code">
+        <span data-fil="ARALIN 03" data-en="LESSON 03">ARALIN 03</span>
+       </span>
+       <span class="lesson-status locked" data-en="LOCKED" data-fil="NAKA-LOCK">
+        NAKA-LOCK
+       </span>
+      </div>
+      <div class="lesson-art lesson-art-3">
+       <span>
+        03
+       </span>
+       <div class="lesson-art-circle">
+       </div>
+      </div>
+      <div class="lesson-card-content">
+       <span class="lesson-category">
+        <span data-fil="YUNIT 1" data-en="UNIT 1">YUNIT 1</span>
+       </span>
+       <h3 data-en="Beliefs and Faith" data-fil="Paniniwala at Pananampalataya">
+        Paniniwala at Pananampalataya
+       </h3>
+       <p data-en="Explore how identity, beliefs about life and the afterlife, and traditional healing practices are shaped." data-fil="Tuklasin kung paano nahuhubog ang identidad, paniniwala sa buhay at kabilang-buhay, at tradisyonal na pagpapagaling.">
+        Tuklasin kung paano nahuhubog ang identidad, paniniwala sa buhay at kabilang-buhay, at tradisyonal na pagpapagaling.
+       </p>
+       <div class="lesson-meta">
+        <span data-en="3 Mini Activities" data-fil="3 Mini Gawain">
+         3 Mini Gawain
+        </span>
+        <span class="lesson-progress-text" data-lesson-progress="3">
+         0%
+        </span>
+       </div>
+       <a class="lesson-button locked-button" data-lesson-link="3" href="#">
+        <span data-en="Complete the previous requirement first" data-fil="Tapusin muna ang naunang kinakailangan">
+         Tapusin muna ang naunang requirement
+        </span>
+        <span>
+         →
+        </span>
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+  </main>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+   <div class="footer-content">
+    <div>
+     <strong>
+      E-HISTORY
+     </strong>
+     <p data-en="Interactive History Learning Platform" data-fil="Interaktibong Plataporma sa Pag-aaral ng Kasaysayan">
+      Interaktibong Platform sa Pag-aaral ng Kasaysayan
+     </p>
+    </div>
+    <div class="footer-right">
+     <span data-fil="Digital na Plataporma sa Pagkatuto para sa Baitang 11" data-en="Grade 11 Digital Learning Platform">Digital na Plataporma sa Pagkatuto para sa Baitang 11</span>
+    </div>
+   </div>
+  </footer>
+  <!-- ==================== JAVASCRIPT FILES ==================== -->
+  <script src="script.js">
+  </script>
+ </body>
+</html>
+
